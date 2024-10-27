@@ -51,10 +51,24 @@ namespace FinalProject3
             app.UseCors(corsPolicy);
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
+          //  if (app.Environment.IsDevelopment())
+          //  {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+            //  }
+
+            using (var scope = app.Services.CreateScope())
+            {
+                try
+                {
+                    var context = scope.ServiceProvider.GetRequiredService<FP3Context>();
+                    context.Database.Migrate();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("Migration error" + ex.Message);
+                }
             }
 
             app.UseHttpsRedirection();

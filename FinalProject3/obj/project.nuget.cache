@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6ZNtKF8ZK7M=",
+  "dgSpecHash": "4vxpoDIjGJw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\API\\FinalProject\\FinalProject3\\FinalProject3\\FinalProject3\\FinalProject3.csproj",
+  "projectFilePath": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\FinalProject3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tomer\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\tomer\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
