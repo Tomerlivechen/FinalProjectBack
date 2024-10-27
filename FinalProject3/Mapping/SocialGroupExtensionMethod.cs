@@ -24,6 +24,7 @@ namespace FinalProject3.Mapping
                 group.Name = NewGroup.Name;
                 group.Description = NewGroup.Description;
                 group.Id = Guid.NewGuid().ToString();
+                group.BanerImageURL = "";
             }
             return group;
         }

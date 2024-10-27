@@ -247,7 +247,7 @@
     "ContainingType": "FinalProject3.Controllers.AuthController",
     "Method": "GetUserPassword",
     "RelativePath": "api/Auth/ResetPassword/{userEmail}",
-    "HttpMethod": "PUT",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -326,6 +326,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.AuthController",
+    "Method": "GetUserByEmail",
+    "RelativePath": "api/Auth/userByEmail/{userEmail}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userEmail",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FinalProject3.DTOs.AppUserDisplay",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "FinalProject3.Controllers.AuthController",

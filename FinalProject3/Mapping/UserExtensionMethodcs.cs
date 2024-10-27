@@ -21,6 +21,7 @@ namespace FinalProject32.Mapping
                 Pronouns = register.Pronouns,
                 ImageURL = register.ImageURL,
                 PermissionLevel = register.PermissionLevel,
+                BanerImageURL = "",
             };
             return user;
 

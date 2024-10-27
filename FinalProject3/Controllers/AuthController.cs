@@ -171,7 +171,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         {
             return Unauthorized();
         }
-        var user = await _context.Users.Include(u => u.SocialGroups).Where(u => u.Id == userId).FirstOrDefaultAsync();
+        var user = await _context.Users.Include(u => u.SocialGroups).ThenInclude(sg=> sg.GroupCreator).Where(u => u.Id == userId).FirstOrDefaultAsync();
         if (user is null)
         {
             return NotFound("User not found.");
