@@ -37,6 +37,32 @@ namespace FinalProject3.Migrations
                     b.ToTable("AppUserSocialGroup");
                 });
 
+            modelBuilder.Entity("FinalProject3.Models.AppImage", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("Public")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("userId");
+
+                    b.ToTable("AppImages");
+                });
+
             modelBuilder.Entity("FinalProject3.Models.Chat", b =>
                 {
                     b.Property<string>("Id")
@@ -341,7 +367,7 @@ namespace FinalProject3.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "233c841e-6135-42b5-9723-e06c104c2c8e",
+                            ConcurrencyStamp = "96623a32-3994-42ec-a3b8-3932a5dcc829",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -510,7 +536,7 @@ namespace FinalProject3.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "911f31bb-eefc-42a1-9777-bb8e718949a0",
+                            UserId = "3c7bbda0-29ad-46c7-ad14-a13e1fe18f86",
                             RoleId = "1"
                         });
                 });
@@ -656,17 +682,17 @@ namespace FinalProject3.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "911f31bb-eefc-42a1-9777-bb8e718949a0",
+                            Id = "3c7bbda0-29ad-46c7-ad14-a13e1fe18f86",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b217b8a0-593a-4313-a0d7-31f5008d36b5",
+                            ConcurrencyStamp = "dc76ba4a-12be-46d1-b427-01c10cc5446f",
                             Email = "TomerLiveChen@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "TOMERLIVECHEN@GMAIL.COM",
                             NormalizedUserName = "SYSADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKAVhVka6izwR7cHAp9QLLzskiHz2wCykZPI/ccEivSE6XiBiAD/2+++GExvNkP4rQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOane0qLLM63a7E3abo4LJCPt8gi3UUhiHK5eJZdA/NvNlmRwvI9vJUh7wLo9zoLLw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "997d747c-6226-499b-9b70-948245aea505",
+                            SecurityStamp = "dd0119da-3bbc-4436-9806-2fba5779c1dd",
                             TwoFactorEnabled = false,
                             UserName = "SysAdmin",
                             BanerImageURL = "",
@@ -703,6 +729,15 @@ namespace FinalProject3.Migrations
                         .HasForeignKey("SocialGroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FinalProject3.Models.AppImage", b =>
+                {
+                    b.HasOne("FinalProject3.Models.AppUser", "user")
+                        .WithMany()
+                        .HasForeignKey("userId");
+
+                    b.Navigation("user");
                 });
 
             modelBuilder.Entity("FinalProject3.Models.Comment", b =>

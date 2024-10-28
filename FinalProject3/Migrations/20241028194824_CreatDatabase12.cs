@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FinalProject3.Migrations
 {
     /// <inheritdoc />
-    public partial class SetUpDatabase11 : Migration
+    public partial class CreatDatabase12 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -103,6 +103,26 @@ namespace FinalProject3.Migrations
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AppImages",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    userId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Url = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Public = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AppImages", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AppImages_AspNetUsers_userId",
+                        column: x => x.userId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -465,17 +485,22 @@ namespace FinalProject3.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "1", "233c841e-6135-42b5-9723-e06c104c2c8e", "Admin", "ADMIN" });
+                values: new object[] { "1", "96623a32-3994-42ec-a3b8-3932a5dcc829", "Admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "BanerImageURL", "Bio", "BlockedId", "ChatsId", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "First_Name", "FollowingId", "HideBlocked", "HideEmail", "HideName", "ImageAlt", "ImageURL", "LastActive", "Last_Name", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PermissionLevel", "PhoneNumber", "PhoneNumberConfirmed", "Prefix", "Pronouns", "SecurityStamp", "TwoFactorEnabled", "UserName", "VoteScore", "votedOn" },
-                values: new object[] { "911f31bb-eefc-42a1-9777-bb8e718949a0", 0, "", "", "[]", "[]", "b217b8a0-593a-4313-a0d7-31f5008d36b5", "AppUser", "TomerLiveChen@gmail.com", false, "Tomer", "[]", false, false, false, "", "https://i.imgur.com/1nKIWjB.gif", "", "Chen", false, null, "TOMERLIVECHEN@GMAIL.COM", "SYSADMIN", "AQAAAAIAAYagAAAAEKAVhVka6izwR7cHAp9QLLzskiHz2wCykZPI/ccEivSE6XiBiAD/2+++GExvNkP4rQ==", "Admin", null, false, "Dr", "They", "997d747c-6226-499b-9b70-948245aea505", false, "SysAdmin", 0, "[]" });
+                values: new object[] { "3c7bbda0-29ad-46c7-ad14-a13e1fe18f86", 0, "", "", "[]", "[]", "dc76ba4a-12be-46d1-b427-01c10cc5446f", "AppUser", "TomerLiveChen@gmail.com", false, "Tomer", "[]", false, false, false, "", "https://i.imgur.com/1nKIWjB.gif", "", "Chen", false, null, "TOMERLIVECHEN@GMAIL.COM", "SYSADMIN", "AQAAAAIAAYagAAAAEOane0qLLM63a7E3abo4LJCPt8gi3UUhiHK5eJZdA/NvNlmRwvI9vJUh7wLo9zoLLw==", "Admin", null, false, "Dr", "They", "dd0119da-3bbc-4436-9806-2fba5779c1dd", false, "SysAdmin", 0, "[]" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "1", "911f31bb-eefc-42a1-9777-bb8e718949a0" });
+                values: new object[] { "1", "3c7bbda0-29ad-46c7-ad14-a13e1fe18f86" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AppImages_userId",
+                table: "AppImages",
+                column: "userId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AppUserSocialGroup_SocialGroupId",
@@ -600,6 +625,9 @@ namespace FinalProject3.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AppImages");
+
             migrationBuilder.DropTable(
                 name: "AppUserSocialGroup");
 

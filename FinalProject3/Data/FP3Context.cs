@@ -22,6 +22,8 @@ namespace FinalProject3.Data
 
         public DbSet<SocialGroup> Group { get; set; } = default!;
 
+        public DbSet<AppImage> AppImages { get; set; } = default!;
+        
         protected override void OnModelCreating(ModelBuilder builder)
         {
 

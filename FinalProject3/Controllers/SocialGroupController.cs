@@ -61,7 +61,7 @@ namespace FinalProject3.Controllers
             {
                 return NotFound();
             }
-            var displayGroup = await fullGroup.ToDisplay(currentUserId, context);
+            var displayGroup = await fullGroup.ToDisplay(currentUserId, _context);
 
             return Ok(displayGroup);
         }

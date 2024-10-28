@@ -640,6 +640,95 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "FinalProject3.Controllers.ImageController",
+    "Method": "sendImage",
+    "RelativePath": "api/Image",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imageURL",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FinalProject3.DTOs.AppImageDisplay",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.ImageController",
+    "Method": "deleteImage",
+    "RelativePath": "api/Image/byId/{imageId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imageId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.ImageController",
+    "Method": "nameImage",
+    "RelativePath": "api/Image/byId/{imageId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imageId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "NewName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.ImageController",
+    "Method": "GetUserImages",
+    "RelativePath": "api/Image/byId/{UserId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[FinalProject3.DTOs.AppImageDisplay, FinalProject3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "FinalProject3.Controllers.NotificationController",
     "Method": "GetNotifications",
     "RelativePath": "api/Notification",

@@ -57,7 +57,7 @@ namespace FinalProject3.Controllers
             {
                 return BadRequest(ModelState);
             }
-            Notification notification = await notificationNew.AddNotification(context);
+            Notification notification = await notificationNew.AddNotification(_context);
             AppUser? notified = null;
             Interaction? interaction = null;
             interaction = await _context.Comment.FindAsync(notificationNew.ReferenceId);
