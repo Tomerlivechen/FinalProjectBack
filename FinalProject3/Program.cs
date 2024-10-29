@@ -42,6 +42,7 @@ namespace FinalProject3
                         "http://localhost:3000",
                         "http://localhost:5173",
                         "http://localhost:5174",
+                        "https://white-pond-0c2316100.5.azurestaticapps.net"
                         //host
                         ]).AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithExposedHeaders("Authorization");
 
