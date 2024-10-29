@@ -18,7 +18,7 @@ namespace FinalProject3
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<FP3Context>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("FP2Context") ?? throw new InvalidOperationException("Connection string 'FP2Context' not found.")));
+            options.UseSqlServer(builder.Configuration.GetConnectionString("FP3Context") ?? throw new InvalidOperationException("Connection string 'FP3Context' not found.")));
             Utils.setupIdentity(builder);
             Utils.setupJwt(builder);
 

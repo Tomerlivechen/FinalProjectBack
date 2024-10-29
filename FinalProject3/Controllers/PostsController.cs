@@ -146,6 +146,7 @@ namespace FinalProject3.Controllers
         }
 
         [HttpGet("ByUpVote/{UserID}")]
+        [Authorize]
         public async Task<ActionResult<List<PostDisplay>>> GetPostByUpVote(string UserID)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
