@@ -6,7 +6,7 @@
         public AppUser? user { get; set; }
         public string Url { get; set; } = string.Empty;
 
-        public string Datetime = DateTime.UtcNow.ToString("yyyy-MM-dd-HH-mm");
+        public string Datetime { get; set; } = string.Empty;
 
         public string Title { get; set; } = string.Empty;
 

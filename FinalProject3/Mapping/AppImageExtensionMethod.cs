@@ -15,6 +15,7 @@ namespace FinalProject3.Mapping
             imageDisplay.Url = image.Url;
             imageDisplay.Title = image.Title;
             imageDisplay.Public = image.Public;
+            imageDisplay.Datetime = image.Datetime;
             if (image.user is not null)
             {
                 imageDisplay.userId = image.user.Id;

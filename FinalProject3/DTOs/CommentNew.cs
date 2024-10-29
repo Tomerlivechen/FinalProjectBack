@@ -13,7 +13,7 @@
 
         public string ParentCommentId { get; set; } = string.Empty;
 
-        public string Datetime = DateTime.UtcNow.ToString("yyyy-MM-dd-HH-mm");
+        public string Datetime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm");
 
     }
 }

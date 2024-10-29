@@ -648,9 +648,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "imageURL",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "imgURL",
+        "Type": "FinalProject3.DTOs.StringInput",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -695,8 +695,8 @@
         "IsRequired": true
       },
       {
-        "Name": "NewName",
-        "Type": "System.String",
+        "Name": "input",
+        "Type": "FinalProject3.DTOs.StringInput",
         "IsRequired": true
       }
     ],
@@ -727,6 +727,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.ImageController",
+    "Method": "PrivateImage",
+    "RelativePath": "api/Image/togglePrivatebyId/{imageId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imageId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "FinalProject3.Controllers.NotificationController",

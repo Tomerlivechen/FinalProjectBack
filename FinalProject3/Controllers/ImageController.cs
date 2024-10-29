@@ -21,8 +21,9 @@ namespace FinalProject3.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult<AppImageDisplay>> sendImage(string imageURL)
+        public async Task<ActionResult<AppImageDisplay>> sendImage(StringInput imgURL)
         {
+            var imageURL = imgURL.Input;
             var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (currentUserId is null)
             {
@@ -37,6 +38,7 @@ namespace FinalProject3.Controllers
             image.Url = imageURL;
             image.Public = false;
             image.user = currentUser;
+            image.Datetime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm");
             await _context.AppImages.AddAsync(image);
             try
             {
@@ -108,8 +110,10 @@ namespace FinalProject3.Controllers
 
         [HttpPut("byId/{imageId}")]
         [Authorize]
-        public async Task<ActionResult> nameImage(string imageId, [FromBody] string NewName)
+        public async Task<ActionResult> nameImage(string imageId, [FromBody] StringInput input)
         {
+
+            var NewName = input.Input;
             var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (currentUserId is null)
             {

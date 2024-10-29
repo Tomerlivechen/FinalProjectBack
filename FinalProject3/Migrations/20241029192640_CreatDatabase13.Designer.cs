@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProject3.Migrations
 {
     [DbContext(typeof(FP3Context))]
-    [Migration("20241028194824_CreatDatabase12")]
-    partial class CreatDatabase12
+    [Migration("20241029192640_CreatDatabase13")]
+    partial class CreatDatabase13
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,6 +44,10 @@ namespace FinalProject3.Migrations
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Datetime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Public")
                         .HasColumnType("bit");
@@ -370,7 +374,7 @@ namespace FinalProject3.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "96623a32-3994-42ec-a3b8-3932a5dcc829",
+                            ConcurrencyStamp = "fefd7676-ef9f-4837-828f-23d955e0d873",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -539,7 +543,7 @@ namespace FinalProject3.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "3c7bbda0-29ad-46c7-ad14-a13e1fe18f86",
+                            UserId = "c3155b53-02c2-4b9f-9c15-84026af28087",
                             RoleId = "1"
                         });
                 });
@@ -685,17 +689,17 @@ namespace FinalProject3.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3c7bbda0-29ad-46c7-ad14-a13e1fe18f86",
+                            Id = "c3155b53-02c2-4b9f-9c15-84026af28087",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dc76ba4a-12be-46d1-b427-01c10cc5446f",
+                            ConcurrencyStamp = "dd995b6d-c068-499c-9e73-a1f1be6f0da5",
                             Email = "TomerLiveChen@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "TOMERLIVECHEN@GMAIL.COM",
                             NormalizedUserName = "SYSADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOane0qLLM63a7E3abo4LJCPt8gi3UUhiHK5eJZdA/NvNlmRwvI9vJUh7wLo9zoLLw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJFHzMD+ZvcVYjolYC48bkXTbxLjd4YFlIvKkXbRu0kbSDwV041wBW3qtRM8XqzjHA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "dd0119da-3bbc-4436-9806-2fba5779c1dd",
+                            SecurityStamp = "ee2cccbc-9dfb-41eb-8385-0a9bce8589bc",
                             TwoFactorEnabled = false,
                             UserName = "SysAdmin",
                             BanerImageURL = "",

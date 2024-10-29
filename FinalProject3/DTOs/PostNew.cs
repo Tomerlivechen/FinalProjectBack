@@ -20,7 +20,7 @@ namespace FinalProject3.DTOs
         public string? Group { get; set; }
 
         public string KeyWords { get; set; } = string.Empty;
-        public string Datetime = DateTime.UtcNow.ToString("yyyy-MM-dd-HH-mm");
+        public string Datetime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm");
 
 
 
