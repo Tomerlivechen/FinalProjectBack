@@ -253,8 +253,7 @@
               "RelativeToolTip": "FinalProject3\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-27T22:29:50.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-27T22:29:50.643Z"
             },
             {
               "$type": "Document",
@@ -279,8 +278,7 @@
               "RelativeToolTip": "FinalProject3\\Controllers\\AuthController.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAAAAkBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T16:46:06.537Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T16:46:06.537Z"
             },
             {
               "$type": "Document",
@@ -316,7 +314,8 @@
               "RelativeToolTip": "FinalProject3\\Controllers\\ImageController.cs",
               "ViewState": "AgIAAJ0AAAAAAAAAAAAcwCcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T19:12:17.653Z"
+              "WhenOpened": "2024-10-28T19:12:17.653Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
