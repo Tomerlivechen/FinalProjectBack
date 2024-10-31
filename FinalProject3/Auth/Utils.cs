@@ -33,7 +33,8 @@ namespace FinalProject2.Auth
                     options.Lockout = lockoutOptions;
                 }
             })
-                .AddEntityFrameworkStores<FP3Context>();
+                .AddEntityFrameworkStores<FP3Context>()
+            .AddDefaultTokenProviders();
         }
 
 
