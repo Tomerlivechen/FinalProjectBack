@@ -4,14 +4,10 @@ using FinalProject3.Mapping;
 using FinalProject3.Models;
 using FinalProject32.Mapping;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 using System.Security.Claims;
-using System.Text.RegularExpressions;
-using System.Threading.Channels;
 
 
 

@@ -2,9 +2,7 @@
 using FinalProject3.DTOs;
 using FinalProject3.Models;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Runtime.Intrinsics.X86;
+
 
 namespace FinalProject3.Mapping
 {

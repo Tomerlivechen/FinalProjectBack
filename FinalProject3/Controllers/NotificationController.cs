@@ -3,12 +3,9 @@ using FinalProject3.DTOs;
 using FinalProject3.Mapping;
 using FinalProject3.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 
 namespace FinalProject3.Controllers

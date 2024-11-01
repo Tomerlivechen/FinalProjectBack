@@ -4,7 +4,6 @@ using FinalProject3.Models;
 using FinalProject32.Mapping;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 
 namespace FinalProject3.Mapping
 {
@@ -82,11 +81,18 @@ namespace FinalProject3.Mapping
                 Id = socialGroup.Id,
                 Name = socialGroup.Name,
                 Description = socialGroup.Description,
-                Admin = await socialGroup.groupAdmin.UsertoDisplay(_context, currentUser),
+
                 IsMemember = member,
                 BanerImageURL = socialGroup.BanerImageURL,
                 GroupRules = socialGroup.GroupRules,
             };
+            var gAdmin = await socialGroup.groupAdmin.UsertoDisplay(_context, currentUser);
+            if (gAdmin is not null)
+            {
+                card.Admin = gAdmin;
+            }
+
+
             return card;
 
         }
@@ -96,10 +102,11 @@ namespace FinalProject3.Mapping
         {
             var currentUser = await _context.Users.Include(u => u.Blocked).Include(u => u.Following).FirstOrDefaultAsync(u => u.Id == userId);
 
-            if (currentUser is null || socialGroup.GroupCreator is null || socialGroup.groupAdmin is null)
+            if (currentUser is null || socialGroup.GroupCreator is null || socialGroup.groupAdmin is null || socialGroup.groupAdmin.UserName is null)
             {
                 return default;
             }
+
             var display = new SocialGroupDisplay()
             {
                 Id = socialGroup.Id,

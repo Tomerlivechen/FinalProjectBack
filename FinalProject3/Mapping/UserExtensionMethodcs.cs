@@ -1,8 +1,6 @@
 ﻿using FinalProject3.Data;
 using FinalProject3.DTOs;
 using FinalProject3.Models;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinalProject32.Mapping
@@ -78,7 +76,8 @@ namespace FinalProject32.Mapping
             } 
 
             Chat? chatWithUser = null;
-            if (userFull.Chats.Count != 0)
+            
+            if (userFull is not null && userFull.Chats.Count != 0)
             {
                 foreach (var chat in userFull.Chats)
                 {

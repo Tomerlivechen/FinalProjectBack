@@ -3,12 +3,10 @@ using FinalProject3.DTOs;
 using FinalProject3.Mapping;
 using FinalProject3.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using static System.Net.Mime.MediaTypeNames;
+
 
 namespace FinalProject3.Controllers
 {

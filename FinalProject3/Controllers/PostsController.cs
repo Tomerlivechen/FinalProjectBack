@@ -3,11 +3,9 @@ using FinalProject3.DTOs;
 using FinalProject3.Mapping;
 using FinalProject3.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 using System.Security.Claims;
 
 namespace FinalProject3.Controllers
@@ -300,7 +298,12 @@ namespace FinalProject3.Controllers
             }
             newPost.AuthorId = userId;
             var post = await newPost.NewPostToPost(userManager , _context);
-            _context.Post.Add(post);
+            if (post is null)
+            {
+                return BadRequest("Post missing info");
+            }
+                _context.Post.Add(post);
+            
             if (post.Group is not null)
             {
                 var group = await _context.Group.FindAsync(post.Group.Id);

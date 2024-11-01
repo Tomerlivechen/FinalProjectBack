@@ -1,5 +1,4 @@
-﻿using FinalProject3.Models;
-using System.ComponentModel.DataAnnotations;
+﻿
 
 namespace FinalProject3.DTOs
 {

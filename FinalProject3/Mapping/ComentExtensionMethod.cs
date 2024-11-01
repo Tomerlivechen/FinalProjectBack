@@ -3,8 +3,7 @@ using FinalProject3.DTOs;
 using FinalProject3.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using System.Xml.Linq;
+
 
 namespace FinalProject3.Mapping
 {
@@ -19,11 +18,15 @@ namespace FinalProject3.Mapping
                 Text = comment.Text,
                 Link = comment.Link,
                 ImageURL = comment.ImageURL,
-                AuthorName = comment.Author.UserName,
                 AuthorId = comment.Author.Id,
                 TotalVotes = comment.TotalVotes,
                 Datetime = comment.Datetime,
             };
+            if (comment.Author.UserName is not null)
+            {
+                setcomment.AuthorName = comment.Author.UserName;
+            }
+
             if (comment.ParentComment is not null)
             {
                 setcomment.ParentCommentId = comment.ParentComment.Id;

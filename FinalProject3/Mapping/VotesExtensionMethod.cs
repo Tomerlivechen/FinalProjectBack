@@ -1,5 +1,4 @@
-﻿using FinalProject3.DTOs;
-using FinalProject3.Models;
+﻿using FinalProject3.Models;
 
 namespace FinalProject3.Mapping
 {

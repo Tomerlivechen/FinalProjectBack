@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Reflection.Emit;
 
 namespace FinalProject3.Data
 {
@@ -135,11 +133,9 @@ namespace FinalProject3.Data
                 PermissionLevel = "Admin",
                 ConcurrencyStamp = Guid.NewGuid().ToString(),
                 SecurityStamp = Guid.NewGuid().ToString(),
-                PasswordHash = hasher.HashPassword(null, "qwertyU1!"),
-
             };
+            user.PasswordHash = hasher.HashPassword(user, "qwertyU1!");
             builder.Entity<AppUser>().HasData(user);
-
             builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string> { RoleId = "1", UserId = user.Id });
 
 

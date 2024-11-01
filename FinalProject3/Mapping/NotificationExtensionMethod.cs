@@ -1,11 +1,8 @@
 ﻿using FinalProject3.Data;
 using FinalProject3.DTOs;
 using FinalProject3.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using System.Globalization;
-using System;
-using System.Linq;
+
 
 namespace FinalProject3.Mapping
 {
