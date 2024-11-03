@@ -43,7 +43,7 @@ namespace FinalProject3
                         "http://localhost:5173",
                         "http://localhost:5174",
                         "https://white-pond-0c2316100.5.azurestaticapps.net",
-                        "https://final-project-front-nu.vercel.app/"
+                        "https://final-project-front-nu.vercel.app"
                         //host
                         ]).AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithExposedHeaders("Authorization");
 
