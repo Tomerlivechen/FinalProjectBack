@@ -26,8 +26,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            var posts = await _context.Post.Include(p => p.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).Include(p => p.Author).Include(p => p.Group).ToListAsync();
-
+            var posts = await _context.Post.Include(p => p.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).Include(p => p.Votes).Include(p => p.Author).Include(p => p.Group).ToListAsync();
             var postsDisplay = new List<PostDisplay>();
             foreach (var post in posts) {
                 var postDisplay = await post.ToDisplay(userId, _context);
@@ -49,8 +48,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            var post = await _context.Post.Include(p => p.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).Include(p => p.Author).Include(p => p.Group).FirstOrDefaultAsync(p => p.Id == id);
-
+            var post = await _context.Post.Include(p => p.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).Include(p => p.Votes).Include(p => p.Author).Include(p => p.Group).FirstOrDefaultAsync(p => p.Id == id);
             if (post == null)
             {
                 return NotFound();
@@ -124,7 +122,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            var posts = await _context.Post.Include(p => p.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).Include(p => p.Author).Include(p => p.Group).Where(p => p.Author != null && p.Author.Id == AuthorId).ToListAsync();
+            var posts = await _context.Post.Include(p => p.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).Include(p => p.Votes).ThenInclude(v => v.Voter).Include(p => p.Author).Include(p => p.Group).Where(p => p.Author != null && p.Author.Id == AuthorId).ToListAsync();
             var postsDisplay = new List<PostDisplay>();
             foreach (var post in posts)
             {
