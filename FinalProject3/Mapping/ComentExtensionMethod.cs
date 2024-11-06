@@ -56,7 +56,7 @@ namespace FinalProject3.Mapping
             AppUser? appUser = await userManager.FindByIdAsync(NewComment.AuthorId);
             if (appUser is null)
             {
-                throw new InvalidOperationException("now Author");
+                throw new InvalidOperationException("no Author");
             }
                 Comment comment = new Comment()
                 {

@@ -122,13 +122,13 @@ namespace FinalProject3.Controllers
             comment.AuthorId = userId;
                 var newComment = await comment.NewCommentToComment(userManager);
                 _context.Comment.Add(newComment);
-            Interaction? parent;
+            Interaction? parent = null;
             bool flag = false;
             if (!string.IsNullOrEmpty(comment.ParentPostId))
             {
                 parent = await _context.Post.FindAsync(comment.ParentPostId);
             }
-            else
+            else if (!string.IsNullOrEmpty(comment.ParentCommentId))
             {
                 parent = await _context.Comment.FindAsync(comment.ParentCommentId);
                 flag = true;
