@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\desktop\\projects\\programming\\c#\\finalprojectback\\finalproject3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\desktop\\projects\\programming\\c#\\finalprojectback\\finalproject3\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -37,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\desktop\\projects\\programming\\c#\\finalprojectback\\finalproject3\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\desktop\\projects\\programming\\c#\\finalprojectback\\finalproject3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\desktop\\projects\\programming\\c#\\finalprojectback\\finalproject3\\data\\fp3context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -263,7 +263,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -271,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PostsController.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\FinalProject3\\Controllers\\PostsController.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Controllers\\PostsController.cs",
@@ -279,18 +279,17 @@
               "RelativeToolTip": "FinalProject3\\Controllers\\PostsController.cs",
               "ViewState": "AQIAAH4BAAAAAAAAAAAuwJABAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:19.811Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T10:47:19.811Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\FinalProject3\\Program.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Program.cs",
               "ToolTip": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\FinalProject3\\Program.cs",
               "RelativeToolTip": "FinalProject3\\Program.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwCsAAAAwAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwDMAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T10:47:19.819Z",
               "EditorCaption": ""
@@ -309,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Votes.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\FinalProject3\\Models\\Votes.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Votes.cs",
@@ -317,12 +316,11 @@
               "RelativeToolTip": "FinalProject3\\Models\\Votes.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:19.971Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T10:47:19.971Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CommentsController.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\FinalProject3\\Controllers\\CommentsController.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Controllers\\CommentsController.cs",
@@ -330,12 +328,11 @@
               "RelativeToolTip": "FinalProject3\\Controllers\\CommentsController.cs",
               "ViewState": "AQIAAA4BAAAAAAAAAAAuwCABAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:20.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T10:47:20.119Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ChatController.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\FinalProject3\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Controllers\\ChatController.cs",
@@ -348,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "PostExtensionMethod.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\FinalProject3\\Mapping\\PostExtensionMethod.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Mapping\\PostExtensionMethod.cs",
@@ -356,12 +353,11 @@
               "RelativeToolTip": "FinalProject3\\Mapping\\PostExtensionMethod.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAQwCkAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:19.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T10:47:19.804Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Post.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\FinalProject3\\Models\\Post.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Post.cs",
@@ -369,12 +365,11 @@
               "RelativeToolTip": "FinalProject3\\Models\\Post.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:19.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T10:47:19.974Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Interaction.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\FinalProject3\\Models\\Interaction.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Interaction.cs",
@@ -382,12 +377,11 @@
               "RelativeToolTip": "FinalProject3\\Models\\Interaction.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAQwBsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:19.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T10:47:19.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\FinalProject3\\Models\\Comment.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Comment.cs",
@@ -395,12 +389,11 @@
               "RelativeToolTip": "FinalProject3\\Models\\Comment.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:19.99Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T10:47:19.99Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ImageController.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Desktop\\Projects\\Programming\\C#\\FinalProjectBack\\FinalProject3\\Controllers\\ImageController.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Controllers\\ImageController.cs",
@@ -408,8 +401,7 @@
               "RelativeToolTip": "FinalProject3\\Controllers\\ImageController.cs",
               "ViewState": "AQIAAF8AAAAAAAAAAAAmwHAAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:20.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T10:47:20.018Z"
             },
             {
               "$type": "Document",
