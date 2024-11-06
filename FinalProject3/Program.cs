@@ -50,7 +50,7 @@ namespace FinalProject3
                 });
             });
             var app = builder.Build();
-            app.UseRouting();
+            
             app.UseCors(corsPolicy);
 
             // Configure the HTTP request pipeline.
