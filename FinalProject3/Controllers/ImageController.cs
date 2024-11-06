@@ -19,7 +19,7 @@ namespace FinalProject3.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult<AppImageDisplay>> sendImage(StringInput imgURL)
+        public async Task<ActionResult<AppImageDisplay>> SendImage(StringInput imgURL)
         {
             var imageURL = imgURL.Input;
             var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -32,11 +32,13 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            AppImage image = new AppImage();
-            image.Url = imageURL;
-            image.Public = false;
-            image.user = currentUser;
-            image.Datetime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm");
+            AppImage image = new()
+            {
+                Url = imageURL,
+                Public = false,
+                user = currentUser,
+                Datetime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm")
+            };
             await _context.AppImages.AddAsync(image);
             try
             {
@@ -76,7 +78,7 @@ namespace FinalProject3.Controllers
 
         [HttpDelete ("byId/{imageId}")]
         [Authorize]
-        public async Task<ActionResult> deleteImage(string imageId)
+        public async Task<ActionResult> DeleteImage(string imageId)
         {
             var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (currentUserId is null)
@@ -108,7 +110,7 @@ namespace FinalProject3.Controllers
 
         [HttpPut("byId/{imageId}")]
         [Authorize]
-        public async Task<ActionResult> nameImage(string imageId, [FromBody] StringInput input)
+        public async Task<ActionResult> NameImage(string imageId, [FromBody] StringInput input)
         {
 
             var NewName = input.Input;

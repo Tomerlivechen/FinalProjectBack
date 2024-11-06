@@ -142,11 +142,13 @@ namespace FinalProject3.Controllers
             if (!flag)
             {
                 var Notified = parent.Author;
-                var newNotification = new NotificationNew();
-                newNotification.NotifierId = userId;
-                newNotification.NotifiedId = Notified.Id;
-                newNotification.Type = "Comment";
-                newNotification.ReferenceId = parent.Id;
+                var newNotification = new NotificationNew
+                {
+                    NotifierId = userId,
+                    NotifiedId = Notified.Id,
+                    Type = "Comment",
+                    ReferenceId = parent.Id
+                };
                 Notification notification = await newNotification.AddNotification(_context);
                 await _context.Notification.AddAsync(notification);
                 Notified.Notifications.Add(notification);
@@ -229,7 +231,7 @@ namespace FinalProject3.Controllers
         [Authorize]
         public async Task<IActionResult> DeleteComment(string id)
         {
-            var comment = await _context.Comment.Include(c => c.Votes).FirstOrDefaultAsync(c => c.Id == id);
+            var comment = await _context.Comment.FirstOrDefaultAsync(c => c.Id == id);
             if (comment is null)
             {
                 return NotFound();
@@ -270,7 +272,7 @@ namespace FinalProject3.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var fullComment = await _context.Comment.Include(p => p.Votes).ThenInclude(v => v.Voter).Where(p => p.Id == commentId).FirstOrDefaultAsync();
+            var fullComment = await _context.Comment.Where(p => p.Id == commentId).FirstOrDefaultAsync();
             if (fullComment is null)
             {
                 return NotFound();
@@ -280,11 +282,11 @@ namespace FinalProject3.Controllers
             {
                 return BadRequest("You have alredey voted");
             }
-            Votes addedVote = new Votes();
+            Votes addedVote = new();
             addedVote.CreatVote(currentUser, Vote);
             currentUser.votedOn.Add(commentId);
             fullComment.Votes.Add(addedVote);
-            fullComment.calcVotes();
+            fullComment.CalcVotes();
             _context.Update(fullComment);
             if (Vote > 0)
             {

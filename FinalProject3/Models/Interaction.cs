@@ -23,8 +23,8 @@ namespace FinalProject3.Models
 
         public string Datetime { get; set; } = string.Empty;
 
-        public List<Comment> Comments { get; set; } = new List<Comment>();
-        public void calcVotes()
+        public List<Comment> Comments { get; set; } = [];
+        public void CalcVotes()
         {
             int UpVotes = 0;
             int DownVotes = 0;

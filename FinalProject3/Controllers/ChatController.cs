@@ -29,7 +29,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            ChatNew chat = new ChatNew()
+            ChatNew chat = new()
             {
                 User1Id = userId,
                 User2Id = user2id,
