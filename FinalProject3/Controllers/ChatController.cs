@@ -147,7 +147,7 @@ namespace FinalProject3.Controllers
             if (user2?.LastActive != null)
             {
                 DateTime lastActiveDateTime;
-                bool parsed = DateTime.TryParseExact(user2.LastActive, "yyyy-MM-dd HH:mm",
+                bool parsed = DateTime.TryParseExact(user2.LastActive, "yyyy-MM-dd HH:mm:ss",
                                                      null, DateTimeStyles.None, out lastActiveDateTime);
                 if (parsed)
                 {

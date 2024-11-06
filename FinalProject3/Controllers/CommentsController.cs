@@ -126,11 +126,11 @@ namespace FinalProject3.Controllers
             bool flag = false;
             if (!string.IsNullOrEmpty(comment.ParentPostId))
             {
-                parent = await _context.Post.FindAsync(comment.ParentPostId);
+                parent = await _context.Post.Include(p => p.Author).Where(p => p.Id == comment.ParentPostId).FirstOrDefaultAsync();
             }
             else if (!string.IsNullOrEmpty(comment.ParentCommentId))
             {
-                parent = await _context.Comment.FindAsync(comment.ParentCommentId);
+                parent = await _context.Comment.Include(c => c.Author).Where(c => c.Id == comment.ParentCommentId).FirstOrDefaultAsync();
                 flag = true;
 
             }

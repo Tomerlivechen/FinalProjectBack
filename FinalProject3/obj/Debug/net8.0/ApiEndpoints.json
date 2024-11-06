@@ -641,7 +641,7 @@
   },
   {
     "ContainingType": "FinalProject3.Controllers.ImageController",
-    "Method": "sendImage",
+    "Method": "SendImage",
     "RelativePath": "api/Image",
     "HttpMethod": "POST",
     "IsController": true,
@@ -667,7 +667,7 @@
   },
   {
     "ContainingType": "FinalProject3.Controllers.ImageController",
-    "Method": "deleteImage",
+    "Method": "DeleteImage",
     "RelativePath": "api/Image/byId/{imageId}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -683,7 +683,7 @@
   },
   {
     "ContainingType": "FinalProject3.Controllers.ImageController",
-    "Method": "nameImage",
+    "Method": "NameImage",
     "RelativePath": "api/Image/byId/{imageId}",
     "HttpMethod": "PUT",
     "IsController": true,
