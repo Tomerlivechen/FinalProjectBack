@@ -26,7 +26,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            var comments = await _context.Comment.Where(c => c.ParentPost != null && c.ParentPost.Id == PostID).ToListAsync();
+            var comments = await _context.Comment.Include(c=>c.Author).Where(c => c.ParentPost != null && c.ParentPost.Id == PostID).ToListAsync();
 
             var commentsDisplay = new List<CommentDisplay>();
             foreach (var comment in comments)
@@ -52,7 +52,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            var comments = await _context.Comment.Where(c => c.ParentComment != null && c.ParentComment.Id == CommentID).ToListAsync();
+            var comments = await _context.Comment.Include(c => c.Author).Where(c => c.ParentComment != null && c.ParentComment.Id == CommentID).ToListAsync();
 
             var commentsDisplay = new List<CommentDisplay>();
             foreach (var comment in comments)
@@ -79,7 +79,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            var comment = await _context.Comment.FindAsync(CommentID);
+            var comment = await _context.Comment.Include(c => c.Author).Where(c=>c.Id==CommentID).FirstOrDefaultAsync();
 
             if (comment == null)
             {
@@ -276,7 +276,7 @@ namespace FinalProject3.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var fullComment = await _context.Comment.Where(p => p.Id == commentId).FirstOrDefaultAsync();
+            var fullComment = await _context.Comment.Include(c => c.Author).Where(p => p.Id == commentId).FirstOrDefaultAsync();
             if (fullComment is null)
             {
                 return NotFound();
