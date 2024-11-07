@@ -139,6 +139,10 @@ namespace FinalProject3.Controllers
                 return BadRequest(!string.IsNullOrEmpty(comment.ParentPostId) ? "Post not found" : "Comment not found");
             }
             parent.Comments.Add(newComment);
+            if (parent.Author.Id == userId)
+            {
+                flag = false;
+            }
             if (!flag)
             {
                 var Notified = parent.Author;
