@@ -70,12 +70,12 @@ namespace FinalProject32.Mapping
             if (user?.LastActive != null)
             {
                 DateTime lastActiveDateTime;
-                bool parsed = DateTime.TryParseExact(user.LastActive, "yyyy-MM-dd HH:mm:ss",
+                bool parsed = DateTime.TryParseExact(user.LastActive, "yyyy-MM-dd-HH-mm",
                                                      null, DateTimeStyles.None, out lastActiveDateTime);
                 if (parsed)
                 {
                     TimeSpan timeDifference = DateTime.UtcNow - lastActiveDateTime;
-                    if (timeDifference.TotalMinutes >= 10)
+                    if (timeDifference.TotalMinutes <= 5)
                     {
                         display.Online = true;
                     }

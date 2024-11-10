@@ -43,6 +43,22 @@
   },
   {
     "ContainingType": "FinalProject3.Controllers.AuthController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Auth/DeleteById/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.AuthController",
     "Method": "Follow",
     "RelativePath": "api/Auth/follow",
     "HttpMethod": "PUT",
@@ -417,6 +433,43 @@
   },
   {
     "ContainingType": "FinalProject3.Controllers.ChatController",
+    "Method": "DeleteMessage",
+    "RelativePath": "api/Chat/DeleteMessage/{MessageId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MessageId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.ChatController",
+    "Method": "EditMessage",
+    "RelativePath": "api/Chat/EditMessage/{MessageId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MessageId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "newMessage",
+        "Type": "FinalProject3.DTOs.StringInput",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.ChatController",
     "Method": "SendMessage",
     "RelativePath": "api/Chat/Message",
     "HttpMethod": "POST",
@@ -617,6 +670,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.CommentsController",
+    "Method": "UnVoteOnPost",
+    "RelativePath": "api/Comments/UnVoteById/{commentId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "commentId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "FinalProject3.Controllers.CommentsController",
@@ -1085,6 +1154,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.PostsController",
+    "Method": "UnVoteOnPost",
+    "RelativePath": "api/Posts/UnVoteById/{PostId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PostId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "FinalProject3.Controllers.PostsController",

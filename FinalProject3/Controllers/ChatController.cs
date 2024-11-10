@@ -142,7 +142,7 @@ namespace FinalProject3.Controllers
                 if (parsed)
                 {
                     TimeSpan timeDifference = DateTime.UtcNow - lastActiveDateTime;
-                    if (timeDifference.TotalMinutes >= 10)
+                    if (timeDifference.TotalMinutes < 10)
                     {
                         message.message = newMessage.Input;
                         try
@@ -199,7 +199,7 @@ namespace FinalProject3.Controllers
                 if (parsed)
                 {
                     TimeSpan timeDifference = DateTime.UtcNow - lastActiveDateTime;
-                    if (timeDifference.TotalMinutes >= 10)
+                    if (timeDifference.TotalMinutes < 10)
                     {
                         
                         var chat = await _context.Chat.FindAsync(message.ChatId);
