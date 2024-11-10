@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Globalization;
 using System.Security.Claims;
 
@@ -111,6 +112,123 @@ namespace FinalProject3.Controllers
                 }
             }
             return Ok(chatNotFollowed);
+        }
+
+
+        [HttpPut("EditMessage/{MessageId}")]
+        [Authorize]
+        public async Task<ActionResult> EditMessage(string MessageId,[FromBody] StringInput newMessage)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId is null)
+            {
+                return Unauthorized();
+            }
+            var userName = User.FindFirstValue(ClaimTypes.Name);
+            if (userName is null)
+            {
+                return Unauthorized();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var message = await _context.Message.FirstOrDefaultAsync(m => m.Id == MessageId);
+            if (message?.Datetime != null)
+            {
+                DateTime lastActiveDateTime;
+                bool parsed = DateTime.TryParseExact(message.Datetime, "yyyy-MM-dd HH:mm:ss",
+                                                     null, DateTimeStyles.None, out lastActiveDateTime);
+                if (parsed)
+                {
+                    TimeSpan timeDifference = DateTime.UtcNow - lastActiveDateTime;
+                    if (timeDifference.TotalMinutes >= 10)
+                    {
+                        message.message = newMessage.Input;
+                        try
+                        {
+                            await _context.SaveChangesAsync();
+                            return Ok();
+                        }
+                        catch (DbUpdateException ex)
+                        {
+                            return Problem(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        return BadRequest("Message Too old");
+                    }
+                }
+                else
+                {
+                    return BadRequest("Date Error");
+                }
+            }
+            else
+            {
+                return NotFound("Message not found");
+            }
+        }
+
+
+        [HttpDelete("DeleteMessage/{MessageId}")]
+        [Authorize]
+        public async Task<ActionResult> DeleteMessage(string MessageId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId is null)
+            {
+                return Unauthorized();
+            }
+            var userName = User.FindFirstValue(ClaimTypes.Name);
+            if (userName is null)
+            {
+                return Unauthorized();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var message = await _context.Message.FirstOrDefaultAsync(m => m.Id == MessageId);
+            if (message?.Datetime != null)
+            {
+                DateTime lastActiveDateTime;
+                bool parsed = DateTime.TryParseExact(message.Datetime, "yyyy-MM-dd HH:mm:ss",
+                                                     null, DateTimeStyles.None, out lastActiveDateTime);
+                if (parsed)
+                {
+                    TimeSpan timeDifference = DateTime.UtcNow - lastActiveDateTime;
+                    if (timeDifference.TotalMinutes >= 10)
+                    {
+                        
+                        var chat = await _context.Chat.FindAsync(message.ChatId);
+                        chat?.messages.Remove(message);
+                        _context.Message.Remove(message);
+                        try
+                        {
+                            await _context.SaveChangesAsync();
+                            return Ok();
+                        }
+                        catch (DbUpdateException ex)
+                        {
+                            return Problem(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        return BadRequest("Message Too old");
+                    }
+                }
+                else
+                {
+                    return BadRequest("Date Error");
+                }
+            }
+            else
+            {
+                return NotFound("Message not found");
+            }
         }
 
 

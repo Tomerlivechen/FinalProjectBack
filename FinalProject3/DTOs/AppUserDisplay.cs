@@ -24,6 +24,8 @@ namespace FinalProject3.DTOs
         public string ChatId { get; set; } = string.Empty;
         public List<string> votedOn { get; set; } = [];
 
+        public bool Online { get; set; } = false;
+
 
     }
 }

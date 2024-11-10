@@ -2,6 +2,8 @@
 using FinalProject3.DTOs;
 using FinalProject3.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+using System;
 
 namespace FinalProject32.Mapping
 {
@@ -65,9 +67,20 @@ namespace FinalProject32.Mapping
             }
 
 
-
-
-            
+            if (user?.LastActive != null)
+            {
+                DateTime lastActiveDateTime;
+                bool parsed = DateTime.TryParseExact(user.LastActive, "yyyy-MM-dd HH:mm:ss",
+                                                     null, DateTimeStyles.None, out lastActiveDateTime);
+                if (parsed)
+                {
+                    TimeSpan timeDifference = DateTime.UtcNow - lastActiveDateTime;
+                    if (timeDifference.TotalMinutes >= 10)
+                    {
+                        display.Online = true;
+                    }
+                }
+            }
 
 
             if (userFull is not null && userFull.Blocked.Any(u => u.Id == currentUser.Id))

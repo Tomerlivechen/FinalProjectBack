@@ -21,7 +21,10 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] AppUserRegister register)
     {
-
+        if (register.PermissionLevel == "Admin")
+        {
+            return Unauthorized();
+        }
         if (ModelState.IsValid)
         {
             AppUser user = register.RegisterToUser();
@@ -70,6 +73,43 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         await userManager.UpdateAsync(currentUser);
         return Ok(usersDisplay);
     }
+
+    [HttpDelete("DeleteById/{userId}")]
+    [Authorize]
+    public async Task<ActionResult> DeleteUser(string userId)
+    {
+        var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (currentUserId is null)
+        {
+            return Unauthorized();
+        }
+        var currentUser = await userManager.FindByIdAsync(currentUserId);
+        if (currentUser is null)
+        {
+            return Unauthorized();
+        }
+        if (currentUser.PermissionLevel != "Admin")
+        {
+            return Unauthorized();
+        }
+        var userToDelete = await userManager.FindByIdAsync(userId);
+        if (userToDelete is null)
+        {
+            return NotFound();
+        }
+        userToDelete.PermissionLevel = "InActive";
+        try
+        {
+            await _context.SaveChangesAsync();
+        }
+        catch (DbUpdateException ex)
+        {
+            return Problem(ex.Message);
+        }
+
+        return Ok();
+    }
+
 
     [HttpGet("GetFollowing/{userId}")]
     [Authorize]
@@ -269,10 +309,15 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
             var user = await userManager.FindByEmailAsync(login.Email);
             if (user != null && user.UserName != null)
             {
+                if (user.PermissionLevel == "InActive")
+                {
+                    return Unauthorized("Your User Has Been Inactivated");
+                }
                 var result = await signInManager.PasswordSignInAsync(user.UserName, login.Password, isPersistent: true, lockoutOnFailure: false);
 
                 if (result.Succeeded)
                 {
+                    
 
                     if (user != null)
                     {
@@ -363,11 +408,6 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         if (!string.IsNullOrEmpty(manageView.imageURL))
         {
             currentUser.ImageURL = manageView.imageURL;
-            changed = true;
-        }
-        if (!string.IsNullOrEmpty(manageView.permissionLevel))
-        {
-            currentUser.PermissionLevel = manageView.permissionLevel;
             changed = true;
         }
         if (!string.IsNullOrEmpty(manageView.bio))

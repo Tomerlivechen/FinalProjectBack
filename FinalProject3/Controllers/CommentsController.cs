@@ -253,7 +253,6 @@ namespace FinalProject3.Controllers
             }
 
 
-
             return Ok();
         }
 
@@ -300,6 +299,65 @@ namespace FinalProject3.Controllers
             {
                 Vote = -1;
             }
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CommentExists(fullComment.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            var commentDisplay = await fullComment.ToDisplayAsync(currentUserId, _context);
+            return Ok(commentDisplay);
+        }
+
+
+        [HttpPut("UnVoteById/{commentId}")]
+        [Authorize]
+        public async Task<IActionResult> UnVoteOnPost(string commentId)
+        {
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (currentUserId is null)
+            {
+                return Unauthorized();
+            }
+            var currentUser = await _context.Users.FirstOrDefaultAsync(u => u.Id == currentUserId);
+            if (currentUser is null)
+            {
+                return Unauthorized();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var fullComment = await _context.Comment.Include(c => c.Votes).ThenInclude(v => v.Voter).Include(c => c.Author).Where(c => c.Id == commentId).FirstOrDefaultAsync();
+            if (fullComment is null)
+            {
+                return NotFound("Comment Not Found");
+            }
+
+            var hasVoted = currentUser.votedOn.Contains(commentId);
+            if (hasVoted is true)
+            {
+                currentUser.votedOn.Remove(commentId);
+            }
+            var voteToRemove = fullComment.Votes.Where(v => v.Voter == currentUser).FirstOrDefault();
+            if (voteToRemove is null)
+            {
+                return NotFound("Vote Not Found");
+            }
+
+            fullComment.Votes.Remove(voteToRemove);
+            fullComment.CalcVotes();
+            _context.Update(fullComment);
             try
             {
                 await _context.SaveChangesAsync();

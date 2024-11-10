@@ -417,6 +417,65 @@ namespace FinalProject3.Controllers
             var postDisplay = await fullPost.ToDisplay(currentUserId, _context);
             return Ok(postDisplay);
         }
+
+        [HttpPut("UnVoteById/{PostId}")]
+        [Authorize]
+        public async Task<IActionResult> UnVoteOnPost(string PostId)
+        {
+            var currentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (currentUserId is null)
+            {
+                return Unauthorized();
+            }
+            var currentUser = await _context.Users.FirstOrDefaultAsync(u => u.Id == currentUserId);
+            if (currentUser is null)
+            {
+                return Unauthorized();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var fullPost = await _context.Post.Include(p => p.Votes).ThenInclude(v=>v.Voter).Include(p => p.Author).Where(p => p.Id == PostId).FirstOrDefaultAsync();
+            if (fullPost is null)
+            {
+                return NotFound("Post Not Found");
+            }
+
+            var hasVoted = currentUser.votedOn.Contains(PostId);
+            if (hasVoted is true)
+            {
+                currentUser.votedOn.Remove(PostId);
+            }
+            var voteToRemove = fullPost.Votes.Where(v => v.Voter == currentUser).FirstOrDefault();
+            if (voteToRemove is null)
+            {
+                return NotFound("Vote Not Found");
+            }
+
+            fullPost.Votes.Remove(voteToRemove);
+            fullPost.CalcVotes();
+            _context.Update(fullPost);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!PostExists(fullPost.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            var postDisplay = await fullPost.ToDisplay(currentUserId, _context);
+            return Ok(postDisplay);
+        }
+
         private bool PostExists(string id)
         {
             return _context.Post.Any(e => e.Id == id);
