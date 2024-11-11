@@ -3,6 +3,7 @@ using FinalProject3.DTOs;
 using FinalProject3.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.Design;
 
 
 namespace FinalProject3.Mapping
@@ -12,7 +13,7 @@ namespace FinalProject3.Mapping
         public static async Task<CommentDisplay> ToDisplayAsync(this Comment comment, string userID, FP3Context _context)
         {
 
-            CommentDisplay setcomment =  new CommentDisplay()
+            CommentDisplay setcomment =  new()
             {
                 Id = comment.Id,
                 Text = comment.Text,
@@ -40,13 +41,17 @@ namespace FinalProject3.Mapping
             {
                 setcomment.hasVoted = currentUser.votedOn.Contains(setcomment.Id);
             }
-            setcomment.Comments = new List<CommentDisplay>();
+            setcomment.Comments = [];
             foreach (Comment com in comment.Comments)
             {
-                var displaycom = await com.ToDisplayAsync(userID, _context);
-                if (displaycom is not null)
+                var tempComment = await _context.Comment.Include(c => c.Author).Include(c => c.Comments).ThenInclude(cc => cc.Author).Where(p => p.Id == com.Id).FirstOrDefaultAsync();
+                if (tempComment is not null)
                 {
-                    setcomment.Comments.Add(displaycom);
+                    var displaycom = await tempComment.ToDisplayAsync(userID, _context);
+                    if (displaycom is not null)
+                    {
+                        setcomment.Comments.Add(displaycom);
+                    }
                 }
             }
             return setcomment;
@@ -58,7 +63,7 @@ namespace FinalProject3.Mapping
             {
                 throw new InvalidOperationException("no Author");
             }
-                Comment comment = new Comment()
+                Comment comment = new()
                 {
                     Id = Guid.NewGuid().ToString(),
                     Text = NewComment.Text,

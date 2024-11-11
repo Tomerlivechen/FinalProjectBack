@@ -43,10 +43,17 @@ namespace FinalProject3.Mapping
             }
 
             setPost.Comments = [];
-            foreach (var comment in post.Comments)
+            foreach (Comment comment in post.Comments)
             {
-                var commentDisplay = await comment.ToDisplayAsync(userID, _context);
-                setPost.Comments.Add(commentDisplay);
+                var tempComment = await _context.Comment.Include(c => c.Author).Include(c => c.Comments).ThenInclude(cc => cc.Author).Where(p => p.Id == comment.Id).FirstOrDefaultAsync();
+                if (tempComment is not null)
+                {
+                    var displaycom = await tempComment.ToDisplayAsync(userID, _context);
+                    if (displaycom is not null)
+                    {
+                        setPost.Comments.Add(displaycom);
+                    }
+                }
             }
             return setPost;
         }

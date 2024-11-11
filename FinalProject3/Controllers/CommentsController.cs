@@ -26,7 +26,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            var comments = await _context.Comment.Include(c=>c.Author).Where(c => c.ParentPost != null && c.ParentPost.Id == PostID).ToListAsync();
+            var comments = await _context.Comment.Include(c=>c.Author).Include(c=>c.Comments).ThenInclude(cc=>cc.Author).Where(c => c.ParentPost != null && c.ParentPost.Id == PostID).ToListAsync();
 
             var commentsDisplay = new List<CommentDisplay>();
             foreach (var comment in comments)
@@ -52,7 +52,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            var comments = await _context.Comment.Include(c => c.Author).Where(c => c.ParentComment != null && c.ParentComment.Id == CommentID).ToListAsync();
+            var comments = await _context.Comment.Include(c => c.Author).Include(c => c.Comments).ThenInclude(cc => cc.Author).Where(c => c.ParentComment != null && c.ParentComment.Id == CommentID).ToListAsync();
 
             var commentsDisplay = new List<CommentDisplay>();
             foreach (var comment in comments)
@@ -79,7 +79,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            var comment = await _context.Comment.Include(c => c.Author).Where(c=>c.Id==CommentID).FirstOrDefaultAsync();
+            var comment = await _context.Comment.Include(c => c.Author).Include(c => c.Comments).ThenInclude(cc => cc.Author).Where(c=>c.Id==CommentID).FirstOrDefaultAsync();
 
             if (comment == null)
             {
@@ -119,8 +119,18 @@ namespace FinalProject3.Controllers
             {
                 return BadRequest("user not found");
             }
+            var currentUser = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            if (currentUser is null)
+            {
+                return Unauthorized();
+            }
             comment.AuthorId = userId;
+
                 var newComment = await comment.NewCommentToComment(userManager);
+            if (newComment.Author is null)
+            {
+                newComment.Author = currentUser;
+            }
                 _context.Comment.Add(newComment);
             Interaction? parent = null;
             bool flag = false;
@@ -188,7 +198,7 @@ namespace FinalProject3.Controllers
             {
                 return BadRequest("Comment ID mismatch.");
             }
-            var fullComment = await _context.Comment.Include(p => p.Author).Include(p => p.ParentComment).Include(p => p.ParentPost).Where(p => p.Id == id).FirstOrDefaultAsync();
+            var fullComment = await _context.Comment.Include(p => p.Author).Include(p => p.ParentComment).Include(p => p.ParentPost).Include(c => c.Comments).ThenInclude(cc => cc.Author).Where(p => p.Id == id).FirstOrDefaultAsync();
             if (fullComment is null)
             {
                 return BadRequest();
@@ -275,7 +285,7 @@ namespace FinalProject3.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var fullComment = await _context.Comment.Include(c => c.Author).Where(p => p.Id == commentId).FirstOrDefaultAsync();
+            var fullComment = await _context.Comment.Include(c => c.Author).Include(c => c.Comments).ThenInclude(cc => cc.Author).Where(p => p.Id == commentId).FirstOrDefaultAsync();
             if (fullComment is null)
             {
                 return NotFound();
@@ -338,7 +348,7 @@ namespace FinalProject3.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var fullComment = await _context.Comment.Include(c => c.Votes).ThenInclude(v => v.Voter).Include(c => c.Author).Where(c => c.Id == commentId).FirstOrDefaultAsync();
+            var fullComment = await _context.Comment.Include(c => c.Votes).ThenInclude(v => v.Voter).Include(c => c.Author).Include(c => c.Comments).ThenInclude(cc => cc.Author).Where(c => c.Id == commentId).FirstOrDefaultAsync();
             if (fullComment is null)
             {
                 return NotFound("Comment Not Found");
