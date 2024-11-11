@@ -38,14 +38,14 @@ namespace FinalProject3
             {
                 options.AddPolicy(name: corsPolicy, policy =>
                 {
-                    policy.WithOrigins([
+                    policy.WithOrigins(
                         "http://localhost:3000",
                         "http://localhost:5173",
                         "http://localhost:5174",
                         "https://white-pond-0c2316100.5.azurestaticapps.net",
                         "https://final-project-front-nu.vercel.app","https://finalprojectfront-6dxw.onrender.com"
                         //host
-                        ]).AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithExposedHeaders("Authorization");
+                        ).AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithExposedHeaders("Authorization");
 
                 });
             });
