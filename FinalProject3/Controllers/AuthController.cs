@@ -74,7 +74,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         return Ok(usersDisplay);
     }
 
-    [HttpDelete("DeleteById/{userId}")]
+    [HttpDelete("ToggleInactivationById/{userId}")]
     [Authorize]
     public async Task<ActionResult> DeleteUser(string userId)
     {
@@ -97,7 +97,14 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         {
             return NotFound();
         }
-        userToDelete.PermissionLevel = "InActive";
+        if (userToDelete.PermissionLevel != "InActive")
+        {
+            userToDelete.PermissionLevel = "InActive";
+        }
+        else
+        {
+            userToDelete.PermissionLevel = "User";
+        }
         try
         {
             await _context.SaveChangesAsync();
@@ -107,7 +114,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
             return Problem(ex.Message);
         }
 
-        return Ok();
+        return Ok(userToDelete);
     }
 
 
@@ -360,9 +367,9 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         var currentUser = await userManager.FindByIdAsync(currentUserId);
         
         bool changed = false;
-        if (currentUser == null)
+        if (currentUser is null)
         {
-            return Redirect("/");
+            return Unauthorized();
         }
         if (!string.IsNullOrEmpty(manageView.oldPassword)  && !string.IsNullOrEmpty(manageView.newPassword) )
         {
@@ -519,6 +526,12 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         {
             return BadRequest(ModelState);
         }
+        var blockedUser = await userManager.FindByIdAsync(toBlock.Id);
+        if (blockedUser is null || blockedUser.PermissionLevel == "Admin")
+        {
+            return Unauthorized();
+        }
+
 
         var user = await _context.Users.Include(u => u.Blocked).FirstOrDefaultAsync(u => u.Id == userId);
         var BlockUser = await userManager.FindByIdAsync(toBlock.Id);

@@ -3,20 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\mapping\\comentextensionmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\mapping\\comentextensionmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\mapping\\userextensionmethodcs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\mapping\\userextensionmethodcs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\dtos\\appuserdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\dtos\\appuserdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\data\\fp3context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\data\\fp3context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\dtos\\messagedisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\dtos\\messagedisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\mapping\\comentextensionmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\mapping\\comentextensionmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\mapping\\postextensionmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,22 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\mapping\\userextensionmethodcs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\mapping\\userextensionmethodcs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\dtos\\appuserdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\dtos\\appuserdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\data\\fp3context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\data\\fp3context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -183,10 +187,6 @@
       "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\dtos\\notificationdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\dtos\\messagedisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\dtos\\messagedisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|c:\\users\\tomer\\documents\\dot_net course\\finalprojectseperate\\finalprojectback\\finalproject3\\dtos\\commentnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E7B10C47-9735-45DF-9264-95C1031A000D}|FinalProject3\\FinalProject3.csproj|solutionrelative:finalproject3\\dtos\\commentnew.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -265,7 +265,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -274,68 +274,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CommentsController.cs",
-              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\CommentsController.cs",
-              "RelativeDocumentMoniker": "FinalProject3\\Controllers\\CommentsController.cs",
-              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\CommentsController.cs",
-              "RelativeToolTip": "FinalProject3\\Controllers\\CommentsController.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAA0wH4AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:20.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Program.cs",
-              "RelativeDocumentMoniker": "FinalProject3\\Program.cs",
-              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Program.cs",
-              "RelativeToolTip": "FinalProject3\\Program.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAqwDUAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:19.819Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ComentExtensionMethod.cs",
-              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\ComentExtensionMethod.cs",
-              "RelativeDocumentMoniker": "FinalProject3\\Mapping\\ComentExtensionMethod.cs",
-              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\ComentExtensionMethod.cs",
-              "RelativeToolTip": "FinalProject3\\Mapping\\ComentExtensionMethod.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAmwCoAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:19.807Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PostExtensionMethod.cs",
-              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\PostExtensionMethod.cs",
-              "RelativeDocumentMoniker": "FinalProject3\\Mapping\\PostExtensionMethod.cs",
-              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\PostExtensionMethod.cs",
-              "RelativeToolTip": "FinalProject3\\Mapping\\PostExtensionMethod.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAawDgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:19.804Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "PostsController.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\PostsController.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Controllers\\PostsController.cs",
               "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\PostsController.cs",
               "RelativeToolTip": "FinalProject3\\Controllers\\PostsController.cs",
-              "ViewState": "AgIAAHIBAAAAAAAAAAAqwIQBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGEBAAAAAAAAAAAiwI0BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T10:47:19.811Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\Comment.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Comment.cs",
@@ -347,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Interaction.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\Interaction.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Interaction.cs",
@@ -359,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 5,
               "Title": "FP3Context.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Data\\FP3Context.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Data\\FP3Context.cs",
@@ -367,47 +318,126 @@
               "RelativeToolTip": "FinalProject3\\Data\\FP3Context.cs",
               "ViewState": "AgIAAHYAAAAAAAAAAAAYwIgAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:19.814Z"
+              "WhenOpened": "2024-11-06T10:47:19.814Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "UserExtensionMethodcs.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\UserExtensionMethodcs.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Mapping\\UserExtensionMethodcs.cs",
               "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\UserExtensionMethodcs.cs",
               "RelativeToolTip": "FinalProject3\\Mapping\\UserExtensionMethodcs.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAowEoAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwFcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T08:00:11.118Z"
+              "WhenOpened": "2024-11-10T08:00:11.118Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\AuthController.cs",
               "RelativeToolTip": "FinalProject3\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAowFUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAhwFAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:19.817Z"
+              "WhenOpened": "2024-11-06T10:47:19.817Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
+              "Title": "MessageDisplay.cs",
+              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\MessageDisplay.cs",
+              "RelativeDocumentMoniker": "FinalProject3\\DTOs\\MessageDisplay.cs",
+              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\MessageDisplay.cs",
+              "RelativeToolTip": "FinalProject3\\DTOs\\MessageDisplay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T10:47:20.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChatController.cs",
+              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\ChatController.cs",
+              "RelativeDocumentMoniker": "FinalProject3\\Controllers\\ChatController.cs",
+              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\ChatController.cs",
+              "RelativeToolTip": "FinalProject3\\Controllers\\ChatController.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAqwLEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T10:47:20.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AppUserDisplay.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\AppUserDisplay.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\AppUserDisplay.cs",
               "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\AppUserDisplay.cs",
               "RelativeToolTip": "FinalProject3\\DTOs\\AppUserDisplay.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAADwvxoAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAmwBwAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:20.123Z"
+              "WhenOpened": "2024-11-06T10:47:20.123Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 0,
+              "Title": "CommentsController.cs",
+              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\CommentsController.cs",
+              "RelativeDocumentMoniker": "FinalProject3\\Controllers\\CommentsController.cs",
+              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\CommentsController.cs",
+              "RelativeToolTip": "FinalProject3\\Controllers\\CommentsController.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAgwEgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T10:47:20.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PostExtensionMethod.cs",
+              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\PostExtensionMethod.cs",
+              "RelativeDocumentMoniker": "FinalProject3\\Mapping\\PostExtensionMethod.cs",
+              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\PostExtensionMethod.cs",
+              "RelativeToolTip": "FinalProject3\\Mapping\\PostExtensionMethod.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAawDgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T10:47:19.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ComentExtensionMethod.cs",
+              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\ComentExtensionMethod.cs",
+              "RelativeDocumentMoniker": "FinalProject3\\Mapping\\ComentExtensionMethod.cs",
+              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\ComentExtensionMethod.cs",
+              "RelativeToolTip": "FinalProject3\\Mapping\\ComentExtensionMethod.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAmwCoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T10:47:19.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Program.cs",
+              "RelativeDocumentMoniker": "FinalProject3\\Program.cs",
+              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Program.cs",
+              "RelativeToolTip": "FinalProject3\\Program.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAqwDUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T10:47:19.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "AppUserIdRequest.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\AppUserIdRequest.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\AppUserIdRequest.cs",
@@ -419,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "AppUserEdit.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\AppUserEdit.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\AppUserEdit.cs",
@@ -431,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "AppUser.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\AppUser.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\AppUser.cs",
@@ -443,19 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ChatController.cs",
-              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\ChatController.cs",
-              "RelativeDocumentMoniker": "FinalProject3\\Controllers\\ChatController.cs",
-              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\ChatController.cs",
-              "RelativeToolTip": "FinalProject3\\Controllers\\ChatController.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:20.126Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Votes.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\Votes.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Votes.cs",
@@ -467,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ImageController.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Controllers\\ImageController.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Controllers\\ImageController.cs",
@@ -479,7 +497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Message.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\Message.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Message.cs",
@@ -491,7 +509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "StringInput.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\StringInput.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\StringInput.cs",
@@ -499,11 +517,12 @@
               "RelativeToolTip": "FinalProject3\\DTOs\\StringInput.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:20.036Z"
+              "WhenOpened": "2024-11-06T10:47:20.036Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "VoteInput.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\VoteInput.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\VoteInput.cs",
@@ -515,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "SocialGroup.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\SocialGroup.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\SocialGroup.cs",
@@ -527,7 +546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "MessageNew.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\MessageNew.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\MessageNew.cs",
@@ -539,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Post.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\Post.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Post.cs",
@@ -551,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "SocialGroupExtensionMethod.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\SocialGroupExtensionMethod.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Mapping\\SocialGroupExtensionMethod.cs",
@@ -563,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\Notification.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Notification.cs",
@@ -575,7 +594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "JWTSettings.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\JWTSettings.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\JWTSettings.cs",
@@ -587,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Chat.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\Chat.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Chat.cs",
@@ -599,7 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\Category.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\Category.cs",
@@ -611,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "BannerImage.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\BannerImage.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\BannerImage.cs",
@@ -623,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "AppImage.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Models\\AppImage.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Models\\AppImage.cs",
@@ -635,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "VotesExtensionMethod.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\VotesExtensionMethod.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Mapping\\VotesExtensionMethod.cs",
@@ -647,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "StringExtensionMethods.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\StringExtensionMethods.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Mapping\\StringExtensionMethods.cs",
@@ -659,7 +678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "PostDisplay.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\PostDisplay.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\PostDisplay.cs",
@@ -671,7 +690,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "NotificationExtensionMethod.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\NotificationExtensionMethod.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Mapping\\NotificationExtensionMethod.cs",
@@ -683,7 +702,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "ChatExtensionMethod.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\ChatExtensionMethod.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Mapping\\ChatExtensionMethod.cs",
@@ -695,7 +714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "AppImageExtensionMethod.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\Mapping\\AppImageExtensionMethod.cs",
               "RelativeDocumentMoniker": "FinalProject3\\Mapping\\AppImageExtensionMethod.cs",
@@ -707,7 +726,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "TokenDto.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\TokenDto.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\TokenDto.cs",
@@ -719,7 +738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "SocialGroupNew.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\SocialGroupNew.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\SocialGroupNew.cs",
@@ -731,7 +750,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "SocialGroupDisplay.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\SocialGroupDisplay.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\SocialGroupDisplay.cs",
@@ -743,7 +762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "SocialGroupCard.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\SocialGroupCard.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\SocialGroupCard.cs",
@@ -755,7 +774,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "ReNewPasswordDTO.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\ReNewPasswordDTO.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\ReNewPasswordDTO.cs",
@@ -767,7 +786,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "PostNew.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\PostNew.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\PostNew.cs",
@@ -779,7 +798,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "NotificationNew.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\NotificationNew.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\NotificationNew.cs",
@@ -791,7 +810,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "NotificationDisplay.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\NotificationDisplay.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\NotificationDisplay.cs",
@@ -803,7 +822,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "SocialGroupEdit.cs",
               "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\SocialGroupEdit.cs",
               "RelativeDocumentMoniker": "FinalProject3\\DTOs\\SocialGroupEdit.cs",
@@ -812,18 +831,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T10:47:20.063Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "MessageDisplay.cs",
-              "DocumentMoniker": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\MessageDisplay.cs",
-              "RelativeDocumentMoniker": "FinalProject3\\DTOs\\MessageDisplay.cs",
-              "ToolTip": "C:\\Users\\tomer\\Documents\\Dot_Net course\\FinalProjectSeperate\\FinalProjectBack\\FinalProject3\\DTOs\\MessageDisplay.cs",
-              "RelativeToolTip": "FinalProject3\\DTOs\\MessageDisplay.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:47:20.067Z"
             },
             {
               "$type": "Document",

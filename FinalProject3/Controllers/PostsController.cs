@@ -342,13 +342,26 @@ namespace FinalProject3.Controllers
         [Authorize]
         public async Task<IActionResult> DeletePost(string id)
         {
-            var post = await _context.Post.Include(c => c.Votes).FirstOrDefaultAsync(c => c.Id == id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId is null)
+            {
+                return Unauthorized();
+            }
+            var currentUser = await userManager.FindByIdAsync(userId);
+            if (currentUser is null)
+            {
+                return Unauthorized();
+            }
+            var post = await _context.Post.Include(p => p.Author).Include(c => c.Votes).Include(c => c.Comments).FirstOrDefaultAsync(c => c.Id == id);
             if (post == null)
             {
                 return NotFound();
             }
 
+
+
             post.Votes.Clear();
+            post.Comments.Clear();
             _context.Post.Remove(post);
 
             try
@@ -381,7 +394,8 @@ namespace FinalProject3.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var fullPost = await _context.Post.Include(p => p.Votes).Include(p => p.Author).Where(p => p.Id== PostId).FirstOrDefaultAsync();
+            var fullPost = await _context.Post.Include(p => p.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).Include(p => p.Votes).ThenInclude(v => v.Voter).Include(p => p.Author).Include(p => p.Group).FirstOrDefaultAsync(p => p.Id == PostId);
+
             if (fullPost is null)
             {
                 return NotFound();
@@ -444,7 +458,8 @@ namespace FinalProject3.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var fullPost = await _context.Post.Include(p => p.Votes).ThenInclude(v=>v.Voter).Include(p => p.Author).Where(p => p.Id == PostId).FirstOrDefaultAsync();
+
+            var fullPost = await _context.Post.Include(p => p.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).Include(p => p.Votes).ThenInclude(v => v.Voter).Include(p => p.Author).Include(p => p.Group).FirstOrDefaultAsync(p => p.Id == PostId);
             if (fullPost is null)
             {
                 return NotFound("Post Not Found");

@@ -83,6 +83,15 @@ namespace FinalProject32.Mapping
             }
 
 
+            if (userFull.PermissionLevel != "InActive")
+            {
+                display.IsActive = true;
+            }
+            else
+            {
+                display.IsActive = false;
+            }
+                
             if (userFull is not null && userFull.Blocked.Any(u => u.Id == currentUser.Id))
             {
                 display.BlockedYou = true;

@@ -26,6 +26,8 @@ namespace FinalProject3.DTOs
 
         public bool Online { get; set; } = false;
 
+        public bool IsActive { get; set; } = false;
+
 
     }
 }
