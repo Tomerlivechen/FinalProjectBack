@@ -2,6 +2,7 @@
 using FinalProject3.DTOs;
 using FinalProject3.Models;
 using Microsoft.AspNetCore.Identity;
+using System.Globalization;
 
 
 namespace FinalProject3.Mapping
@@ -92,6 +93,24 @@ namespace FinalProject3.Mapping
             UserId = Fullmessage.UserId,
             Datetime= Fullmessage.Datetime,
             };
+            if (Fullmessage?.Datetime != null)
+            {
+                DateTime created;
+                bool parsed = DateTime.TryParseExact(Fullmessage.Datetime, "yyyy-MM-dd HH:mm:ss",
+                                                     null, DateTimeStyles.None, out created);
+                if (parsed)
+                {
+                    TimeSpan timeDifference = DateTime.UtcNow - created;
+                    if (timeDifference.TotalMinutes <= 10)
+                    {
+                        DisplayMessage.Editable = true;
+                    }
+                    else
+                    {
+                        DisplayMessage.Editable = false;
+                    }
+                }
+            }
             return DisplayMessage;
         }
 

@@ -10,5 +10,6 @@
         public string message { get; set; } = string.Empty;
 
         public string Datetime { get; set; } = string.Empty;
+        public bool Editable { get; set; } = false;
     }
 }

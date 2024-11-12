@@ -11,5 +11,7 @@ namespace FinalProject3.DTOs
         public string User2Name { get; set; } = string.Empty;
 
         public List<MessageDisplay> messages { get; set; } = new List<MessageDisplay>();
+
+        
     }
 }
