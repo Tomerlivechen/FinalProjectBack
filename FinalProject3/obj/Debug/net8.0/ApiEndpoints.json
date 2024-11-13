@@ -43,22 +43,6 @@
   },
   {
     "ContainingType": "FinalProject3.Controllers.AuthController",
-    "Method": "DeleteUser",
-    "RelativePath": "api/Auth/DeleteById/{userId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FinalProject3.Controllers.AuthController",
     "Method": "Follow",
     "RelativePath": "api/Auth/follow",
     "HttpMethod": "PUT",
@@ -310,6 +294,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.AuthController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Auth/ToggleInactivationById/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "FinalProject3.Controllers.AuthController",
@@ -1105,18 +1105,12 @@
   },
   {
     "ContainingType": "FinalProject3.Controllers.PostsController",
-    "Method": "GetPostByUpVote",
-    "RelativePath": "api/Posts/ByUpVote/{UserID}",
+    "Method": "GetPostByVotedOn",
+    "RelativePath": "api/Posts/ByVotedOn",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "UserID",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[FinalProject3.DTOs.PostDisplay, FinalProject3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
