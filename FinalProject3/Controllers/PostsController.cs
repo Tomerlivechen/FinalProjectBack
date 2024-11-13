@@ -149,17 +149,17 @@ namespace FinalProject3.Controllers
             return Ok(postsDisplay);
         }
 
-        [HttpGet("ByUpVote/{UserID}")]
+        [HttpGet("ByVotedOn")]
         [Authorize]
-        public async Task<ActionResult<List<PostDisplay>>> GetPostByUpVote(string UserID)
+        public async Task<ActionResult<List<PostDisplay>>> GetPostByVotedOn()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userId is null)
             {
                 return Unauthorized();
             }
-            var posts = await _context.Post
-            .Where(p => p.Votes.Any(v => v.Voter != null && v.Voter.Id == UserID && v.Voted > 0)).ToListAsync();
+            var posts = await _context.Post.Include(p => p.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).ThenInclude(c => c.Comments).Include(p => p.Votes).ThenInclude(v => v.Voter).Include(p => p.Author).Include(p => p.Group)
+            .Where(p => p.Votes.Any(v => v.Voter != null && v.Voter.Id == userId)).ToListAsync();
             var postsDisplay = new List<PostDisplay>();
             foreach (var post in posts)
             {
