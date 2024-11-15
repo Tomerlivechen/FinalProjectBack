@@ -266,6 +266,10 @@ namespace FinalProject3.Controllers
             {
                 fullPost.Link = post.Link;
             }
+            if (post.CategoryId != fullPost.CategoryId)
+            {
+                fullPost.CategoryId = post.CategoryId;
+            }
 
             _context.Entry(fullPost).State = EntityState.Modified;
 
