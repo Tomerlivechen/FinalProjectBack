@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using System.Security.Claims;
 
 
@@ -61,6 +62,8 @@ namespace FinalProject3.Controllers
 
             return Ok(displayGroup);
         }
+
+
 
         [HttpGet("GetMembers/{GroupId}")]
         [Authorize]
@@ -266,12 +269,12 @@ namespace FinalProject3.Controllers
             {
                 return NotFound("Group Not Found");
             }
-            if (currentUserId != group.AdminId || currentUserPremission == "Admin")
+            if (currentUserId != group.AdminId || currentUserPremission != "Admin")
             {
                 return Unauthorized();
             }
-            group.Posts.Clear();
-            _context.Group.Remove(group);
+            group.Name = "Deleted";
+
             try
             {
                 await _context.SaveChangesAsync();
@@ -280,8 +283,8 @@ namespace FinalProject3.Controllers
             {
                 return Problem(ex.Message);
             }
-            return Ok();
 
+            return Ok();
 
         }
 

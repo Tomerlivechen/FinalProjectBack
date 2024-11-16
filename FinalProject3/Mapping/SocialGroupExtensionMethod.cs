@@ -76,6 +76,11 @@ namespace FinalProject3.Mapping
                 member = true;
             }
 
+            if (socialGroup.Name == "Deleted")
+            {
+                return default;
+            }
+
             var card = new SocialGroupCard()
             {
                 Id = socialGroup.Id,
@@ -103,6 +108,11 @@ namespace FinalProject3.Mapping
             var currentUser = await _context.Users.Include(u => u.Blocked).Include(u => u.Following).FirstOrDefaultAsync(u => u.Id == userId);
 
             if (currentUser is null || socialGroup.GroupCreator is null || socialGroup.groupAdmin is null || socialGroup.groupAdmin.UserName is null)
+            {
+                return default;
+            }
+
+            if (socialGroup.Name == "Deleted")
             {
                 return default;
             }
