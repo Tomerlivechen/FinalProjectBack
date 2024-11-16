@@ -273,7 +273,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
-            group.Name = "Deleted";
+            group.Name = "__$DeletedGroup$__";
 
             try
             {

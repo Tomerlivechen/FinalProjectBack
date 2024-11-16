@@ -112,7 +112,7 @@ namespace FinalProject3.Mapping
                 return default;
             }
 
-            if (socialGroup.Name == "Deleted")
+            if (socialGroup.Name == "__$DeletedGroup$__")
             {
                 return default;
             }

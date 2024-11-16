@@ -442,6 +442,14 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
             currentUser.HideBlocked = manageView.hideBlocked;
             changed = true;
         }
+        if (manageView.permissionLevel != currentUser.PermissionLevel)
+        {
+            if (manageView.permissionLevel == "User" || manageView.permissionLevel == "PowerUser")
+            {
+                currentUser.HideBlocked = manageView.hideBlocked;
+                changed = true;
+            }
+        }
         if (changed)
         {
             await userManager.UpdateAsync(currentUser);
