@@ -387,42 +387,42 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
                 }
             }
         }
-        if (!string.IsNullOrEmpty(manageView.userName))
+        if (manageView.userName != currentUser.UserName)
         {
             currentUser.UserName = manageView.userName;
             changed = true;
         }
-        if (!string.IsNullOrEmpty(manageView.prefix))
+        if (manageView.prefix != currentUser.Prefix)
         {
             currentUser.Prefix = manageView.prefix;
             changed = true;
         }
-        if (!string.IsNullOrEmpty(manageView.first_Name))
+        if (manageView.first_Name != currentUser.Last_Name)
         {
             currentUser.First_Name = manageView.first_Name;
             changed = true;
         }
-        if (!string.IsNullOrEmpty(manageView.last_Name))
+        if (manageView.last_Name != currentUser.Last_Name)
         {
             currentUser.Last_Name = manageView.last_Name;
             changed = true;
         }
-        if (!string.IsNullOrEmpty(manageView.pronouns))
+        if (manageView.pronouns != currentUser.Pronouns)
         {
             currentUser.Pronouns = manageView.pronouns;
             changed = true;
         }
-        if (!string.IsNullOrEmpty(manageView.imageURL))
+        if (manageView.imageURL != currentUser.ImageURL)
         {
             currentUser.ImageURL = manageView.imageURL;
             changed = true;
         }
-        if (!string.IsNullOrEmpty(manageView.bio))
+        if (manageView.bio != currentUser.Bio)
         {
             currentUser.Bio = manageView.bio;
             changed = true;
         }
-        if (!string.IsNullOrEmpty(manageView.banerImageURL) )
+        if (manageView.banerImageURL != currentUser.BanerImageURL)
         {
             currentUser.BanerImageURL = manageView.banerImageURL;
             changed = true;
@@ -446,7 +446,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         {
             if (manageView.permissionLevel == "User" || manageView.permissionLevel == "PowerUser")
             {
-                currentUser.HideBlocked = manageView.hideBlocked;
+                currentUser.PermissionLevel = manageView.permissionLevel;
                 changed = true;
             }
         }
