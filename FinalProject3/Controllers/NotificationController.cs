@@ -97,7 +97,16 @@ namespace FinalProject3.Controllers
 
             return Ok(notification.ToDisplay());
         }
+        [HttpGet("ByNotificationID/{notificationID}")]
+        [Authorize]
+        public async Task<ActionResult> GetNotification(string notificationID)
+        {
 
+            var notification = await _context.Notification.FindAsync(notificationID);
+
+            return Ok(notification);
+
+        }
         [HttpPut("Update/{notificationID}")]
         [Authorize]
         public async Task<ActionResult> EditNotification(string notificationID, [FromBody] BoolInput remove)

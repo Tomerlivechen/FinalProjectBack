@@ -139,7 +139,7 @@ namespace FinalProject3.Controllers
                 return Problem(ex.Message);
             }
 
-            return Ok();
+            return Ok(image);
         }
 
         [HttpPut("togglePrivatebyId/{imageId}")]

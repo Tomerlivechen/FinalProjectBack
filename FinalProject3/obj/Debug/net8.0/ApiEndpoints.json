@@ -861,6 +861,22 @@
   },
   {
     "ContainingType": "FinalProject3.Controllers.NotificationController",
+    "Method": "GetNotification",
+    "RelativePath": "api/Notification/ByNotificationID/{notificationID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "notificationID",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinalProject3.Controllers.NotificationController",
     "Method": "EditNotification",
     "RelativePath": "api/Notification/Update/{notificationID}",
     "HttpMethod": "PUT",
