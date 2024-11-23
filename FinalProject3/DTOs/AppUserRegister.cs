@@ -26,7 +26,7 @@ namespace FinalProject3.DTOs
         [Required]
         [StringLength(30, MinimumLength = 2, ErrorMessage = "Last name must be between 2 and 30 characters.")]
         public required string Last_Name { get; set; } 
-        [Required]
+
         [StringLength(10, MinimumLength = 2, ErrorMessage = "Pronouns must be between 2 and 10 characters.")]
         public required string Pronouns { get; set; } 
         [Required]
