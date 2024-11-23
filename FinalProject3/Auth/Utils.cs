@@ -17,7 +17,7 @@ namespace FinalProject2.Auth
             var lockoutOptions = new LockoutOptions()
             {
                 AllowedForNewUsers = false,
-                DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5),
+                DefaultLockoutTimeSpan = TimeSpan.FromMinutes(60),
                 MaxFailedAccessAttempts = 5
             };
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -29,7 +29,7 @@ namespace FinalProject2.Auth
                     options.Password.RequireDigit = false;
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
-                    options.Password.RequiredLength = 6;
+                    options.Password.RequiredLength = 8;
                     options.Lockout = lockoutOptions;
                 }
             })
