@@ -97,6 +97,10 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         {
             return NotFound();
         }
+        if (userToDelete.PermissionLevel == "Admin")
+        {
+            return Unauthorized();
+        }
         if (userToDelete.PermissionLevel != "InActive")
         {
             userToDelete.PermissionLevel = "InActive";
