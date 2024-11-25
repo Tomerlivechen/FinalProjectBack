@@ -26,7 +26,7 @@ namespace FinalProject3.Data
         {
 
             base.OnModelCreating(builder);
-
+            // Configure the SocialGroups relationship
             builder.Entity<AppUser>()
     .HasMany(a => a.SocialGroups)
     .WithMany(s => s.Members)
@@ -69,14 +69,14 @@ namespace FinalProject3.Data
                         .HasOne<AppUser>()
                         .WithMany()
                         .HasForeignKey("FollowingId")
-                        .OnDelete(DeleteBehavior.Restrict), // Change to Restrict
+                        .OnDelete(DeleteBehavior.Restrict), 
                     j => j
                         .HasOne<AppUser>()
                         .WithMany()
                         .HasForeignKey("FollowerId")
-                        .OnDelete(DeleteBehavior.Cascade)); // Keep as Cascade
+                        .OnDelete(DeleteBehavior.Cascade));
 
-            // Configure the blocking relationship
+            // Configure the Blocked relationship
             builder.Entity<AppUser>()
                 .HasMany(u => u.Blocked)
                 .WithMany()
@@ -86,13 +86,13 @@ namespace FinalProject3.Data
                         .HasOne<AppUser>()
                         .WithMany()
                         .HasForeignKey("BlockedId")
-                        .OnDelete(DeleteBehavior.Restrict), // Keep as Restrict
+                        .OnDelete(DeleteBehavior.Restrict), 
                     j => j
                         .HasOne<AppUser>()
                         .WithMany()
                         .HasForeignKey("BlockerId")
-                        .OnDelete(DeleteBehavior.Cascade)); // Keep as Cascade
-                                                            // Configure the Chat relationship
+                        .OnDelete(DeleteBehavior.Cascade));
+            // Configure the Chats and Users relationship                    
             builder.Entity<AppUser>()
                 .HasMany(u => u.Chats) 
                 .WithMany(c => c.Users) 
@@ -112,7 +112,7 @@ namespace FinalProject3.Data
 
 
 
-
+            // Seed admin user   
 
             builder.Entity<IdentityRole>().HasData(
     new IdentityRole() { Id = "1", Name = "Admin", NormalizedName = "ADMIN", ConcurrencyStamp = Guid.NewGuid().ToString() }
