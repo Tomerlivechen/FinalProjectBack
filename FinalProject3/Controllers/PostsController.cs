@@ -16,7 +16,7 @@ namespace FinalProject3.Controllers
     {
         private readonly FP3Context _context = context;
 
-        // GET: api/Posts
+        // Retrieves a list of posts along with their associated comments, votes, author, and group, filtered for the current user.
         [HttpGet]
         [Authorize]
         public async Task<ActionResult<IEnumerable<PostDisplay>>> GetPosts()
@@ -38,7 +38,7 @@ namespace FinalProject3.Controllers
         }
 
 
-        // GET: api/Posts/5
+        // Retrieves a single post by its ID, including its comments, votes, author, and group, filtered for the current user.
         [HttpGet("ById/{id}")]
         [Authorize]
         public async Task<ActionResult<PostDisplay>> GetPost(string id)
@@ -59,7 +59,7 @@ namespace FinalProject3.Controllers
 
 
 
-        // GET: api/Posts/5
+        // Retrieves a list of posts containing a specified keyword, filtered for the current user.
         [HttpGet("ByKeyword/{KeyWord}")]
         [Authorize]
         public async Task<ActionResult<List<PostDisplay>>> GetPostByKeyWord(string KeyWord)
@@ -84,7 +84,7 @@ namespace FinalProject3.Controllers
 
             return postsDisplay;
         }
-
+        // Retrieves a list of posts belonging to a specific group, filtered for the current user.
         [HttpGet("ByGroup/{GroupId}")]
         [Authorize]
         public async Task<ActionResult<List<PostDisplay>>> GetPostByGroupd(string GroupId)
@@ -112,7 +112,7 @@ namespace FinalProject3.Controllers
 
             return Ok(postsDisplay);
         }
-
+        // Retrieves a list of posts authored by a specific author, filtered for the current user.
         [HttpGet("ByAuthor/{AuthorId}")]
         [Authorize]
         public async Task<ActionResult<List<PostDisplay>>> GetPostByAuthor(string AuthorId)
@@ -148,7 +148,7 @@ namespace FinalProject3.Controllers
 
             return Ok(postsDisplay);
         }
-
+        // Retrieves a list of posts that the current user has voted on, filtered for the current user.
         [HttpGet("ByVotedOn")]
         [Authorize]
         public async Task<ActionResult<List<PostDisplay>>> GetPostByVotedOn()
@@ -173,7 +173,7 @@ namespace FinalProject3.Controllers
 
             return Ok(postsDisplay);
         }
-
+        // Retrieves a list of posts that the current user has downvoted, filtered for the current user.
         [HttpGet("ByDownVote/{UserID}")]
         [Authorize]
         public async Task<ActionResult<List<PostDisplay>>> GetPostByDownVote(string UserID)
@@ -198,7 +198,7 @@ namespace FinalProject3.Controllers
 
             return Ok(postsDisplay);
         }
-
+        // Retrieves a full post by its ID, without any filters.
         [HttpGet("FullById/{PostID}")]
         [Authorize]
         public async Task<ActionResult<Post>> GetFullPostByPostID(string PostId)
@@ -215,8 +215,7 @@ namespace FinalProject3.Controllers
 
 
 
-        // PUT: api/Posts/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // Updates an existing post based on the provided data, ensuring no unauthorized modifications are made.
         [HttpPut("{id}")]
         [Authorize]
         public async Task<ActionResult<PostDisplay>> PutPost(string id, [FromBody] PostDisplay post)
@@ -295,8 +294,7 @@ namespace FinalProject3.Controllers
             return Ok(postDisplay);
         }
 
-        // POST: api/Posts
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // Creates a new post from the provided data and associates it with the current user.
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<PostDisplay>> PostPost([FromBody] PostNew newPost)
@@ -341,7 +339,7 @@ namespace FinalProject3.Controllers
             return Created("Success", postDisplay);
         }
 
-        // DELETE: api/Posts/5
+        // Deletes a post and its associated comments and votes, ensuring the current user has proper authorization.
         [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> DeletePost(string id)
@@ -380,6 +378,7 @@ namespace FinalProject3.Controllers
 
             return Ok();
         }
+        // Allows the current user to vote on a post, ensuring they haven't voted already.
         [HttpPut("VoteById/{PostId}")]
         [Authorize]
         public async Task<IActionResult> VoteOnPost(string PostId, [FromBody] VoteInput vote)
@@ -444,6 +443,7 @@ namespace FinalProject3.Controllers
             return Ok(postDisplay);
         }
 
+        // Allows the current user to remove their vote on a post
         [HttpPut("UnVoteById/{PostId}")]
         [Authorize]
         public async Task<IActionResult> UnVoteOnPost(string PostId)
@@ -502,7 +502,7 @@ namespace FinalProject3.Controllers
             var postDisplay = await fullPost.ToDisplay(currentUserId, _context);
             return Ok(postDisplay);
         }
-
+        // Check if a post exists by its ID.
         private bool PostExists(string id)
         {
             return _context.Post.Any(e => e.Id == id);

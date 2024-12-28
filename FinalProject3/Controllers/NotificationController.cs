@@ -15,6 +15,7 @@ namespace FinalProject3.Controllers
     public class NotificationController(FP3Context context, UserManager<AppUser> userManager) : ControllerBase
     {
         private readonly FP3Context _context = context;
+        /// Retrieves a list of notifications for the current user that are not hidden and have been notified.
 
         [HttpGet]
         [Authorize]
@@ -24,8 +25,9 @@ namespace FinalProject3.Controllers
             var notifications = await _context.Notification.Where(n => n.Notified != null && n.Notified.Id == userId && !n.Hidden).Select(n => n.ToDisplay()).ToListAsync();
             return (notifications);
         }
+        /// Aged out notifications , age out changes thair status acording to the AgeOut function 5 days to seen 30 days to hide.
 
-        [HttpPatch]
+        [HttpPut]
         [Authorize]
         public async Task<ActionResult> AgeOutNotifications()
         {
@@ -46,6 +48,7 @@ namespace FinalProject3.Controllers
             return Ok();
         }
 
+        /// Creates a new notification based on the provided data and references either a comment or a message.
 
         [HttpPost]
         public async Task<ActionResult> PostNotification(NotificationNew notificationNew)
@@ -97,6 +100,9 @@ namespace FinalProject3.Controllers
 
             return Ok(notification.ToDisplay());
         }
+
+        /// Retrieves a specific notification by its ID.
+
         [HttpGet("ByNotificationID/{notificationID}")]
         [Authorize]
         public async Task<ActionResult> GetNotification(string notificationID)
@@ -107,6 +113,8 @@ namespace FinalProject3.Controllers
             return Ok(notification);
 
         }
+        /// Updates a specific notification, marking it as viewed or hidden.
+
         [HttpPut("Update/{notificationID}")]
         [Authorize]
         public async Task<ActionResult> EditNotification(string notificationID, [FromBody] BoolInput remove)
@@ -145,6 +153,7 @@ namespace FinalProject3.Controllers
             return Ok(notification);
 
         }
+        /// Checks if a notification with the given ID exists in the database.
         private bool NotificationExists(string id)
         {
             return _context.Notification.Any(e => e.Id == id);

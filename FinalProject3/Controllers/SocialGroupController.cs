@@ -19,7 +19,8 @@ namespace FinalProject3.Controllers
     public class SocialGroupController(FP3Context context, UserManager<AppUser> userManager) : ControllerBase
     {
         private readonly FP3Context _context = context;
-
+        /// Retrieves a list of social groups and returns a card representation of each group.
+        /// The response will only include groups the current user has access to.
         [HttpGet]
         [Authorize]
         public async Task<ActionResult<IEnumerable<SocialGroupCard>>> GetGroups()
@@ -44,6 +45,9 @@ namespace FinalProject3.Controllers
             }
             return Ok(SGCards);
         }
+
+        /// Retrieves detailed information about a specific group based on its ID.
+        /// Only accessible to authenticated users.
         [HttpGet("ById/{GroupId}")]
         [Authorize]
         public async Task<ActionResult<SocialGroupDisplay>> GetGroupbyId(string GroupId)
@@ -64,7 +68,8 @@ namespace FinalProject3.Controllers
         }
 
 
-
+        /// Retrieves the list of members for a specific social group based on its ID.
+        /// The response includes basic display information for each member.
         [HttpGet("GetMembers/{GroupId}")]
         [Authorize]
         public async Task<ActionResult<IEnumerable<AppUserDisplay>>> GetMembersByGroupbyId(string GroupId)
@@ -99,7 +104,8 @@ namespace FinalProject3.Controllers
             
                 
         }
-
+        /// Creates a new social group based on the provided data.
+        /// The new group is saved to the database and a card representation of the group is returned.
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<SocialGroup>> PostGroup(SocialGroupNew groupNew) 
@@ -129,7 +135,8 @@ namespace FinalProject3.Controllers
 
             return Ok(await group.ToDisplay(currentUserId, _context));
         }
-
+        /// Adds a new member to a specific social group by its ID.
+        /// If the user is already a member, a conflict error is returned.
         [HttpPut("AddMember/{groupId}")]
         [Authorize]
         public async Task<ActionResult> AddMember(string groupId)
@@ -176,10 +183,10 @@ namespace FinalProject3.Controllers
             return Ok();
         }
 
-        
 
 
-
+        /// Removes a specific member from a social group by its ID.
+        /// The user to be removed is identified by the provided user ID.
         [HttpPut("RemoveMember/{groupId}")]
         [Authorize]
         public async Task<ActionResult> RemoveMember(string groupId,[FromBody] IdInput userIdInput) 
@@ -219,6 +226,7 @@ namespace FinalProject3.Controllers
             }
             return Ok();
         }
+        /// Edits the details of an existing social group. Only the group admin can make changes.
         [HttpPut("EditGroup")]
         [Authorize]
         public async Task<ActionResult> EditGroup(SocialGroupEdit editGroup)
@@ -253,7 +261,8 @@ namespace FinalProject3.Controllers
             }
             return Ok();
         }
-
+        /// Deletes a social group based on its ID. The group is marked as deleted rather than permanently removed.
+        /// Only the group admin with "Admin" permission can delete a group.
         [HttpDelete("{groupId}")]
         [Authorize]
         public async Task<ActionResult> DeleteGroup(string groupId)

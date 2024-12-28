@@ -17,6 +17,8 @@ namespace FinalProject3.Controllers
 
 
         private readonly FP3Context _context = context;
+        // Gets a list of comments for a specific post identified by PostID, including the comments' authors and replies.
+
         [HttpGet("ByPPostId/{PostID}")]
         [Authorize]
         public async Task<ActionResult<List<CommentDisplay>>> GetCommentByPPostID(string PostID)
@@ -42,6 +44,7 @@ namespace FinalProject3.Controllers
 
             return Ok(commentsDisplay);
         }
+        // Gets a list of comments for a specific comment identified by CommentID, including the comments' authors and replies.
 
         [HttpGet("ByPCommentId/{CommentID}")]
         [Authorize]
@@ -68,6 +71,7 @@ namespace FinalProject3.Controllers
 
             return Ok(commentsDisplay);
         }
+        // Gets a specific comment identified by CommentID, including its author and replies.
 
         [HttpGet("ByCommentId/{CommentID}")]
         [Authorize]
@@ -92,6 +96,7 @@ namespace FinalProject3.Controllers
 
             return commentDisplay;
         }
+        // Retrieves the full details of a specific comment identified by CommentID.
 
         [HttpGet("ById/{CommentID}")]
         public async Task<ActionResult<Comment>> GetFullCommentByCommentID(string CommentID)
@@ -105,6 +110,7 @@ namespace FinalProject3.Controllers
 
             return Ok(comment);
         }
+        // Creates a new comment. Includes validation and adds the comment to a post or another comment if applicable.
 
         [HttpPost]
         [Authorize]
@@ -180,6 +186,7 @@ namespace FinalProject3.Controllers
             var commentDisplay = await newComment.ToDisplayAsync(userId, _context);
             return Created("Success", commentDisplay);
         }
+        // Updates an existing comment identified by its ID, including validation and concurrency handling.
 
         [HttpPut("{id}")]
         [Authorize]
@@ -240,6 +247,7 @@ namespace FinalProject3.Controllers
 
             return Ok(commentDisplay);
         }
+        // Deletes a comment identified by its ID, clearing associated votes before removal.
 
         [HttpDelete("{id}")]
         [Authorize]
@@ -265,6 +273,7 @@ namespace FinalProject3.Controllers
 
             return Ok();
         }
+        // Allows a user to vote on a specific comment identified by commentId, validating the user's action and updating the vote count.
 
         [HttpPut("VoteById/{commentId}")]
         [Authorize]
@@ -329,6 +338,7 @@ namespace FinalProject3.Controllers
             return Ok(commentDisplay);
         }
 
+        // Allows a user to remove their vote from a specific comment identified by commentId.
 
         [HttpPut("UnVoteById/{commentId}")]
         [Authorize]
@@ -387,7 +397,7 @@ namespace FinalProject3.Controllers
             var commentDisplay = await fullComment.ToDisplayAsync(currentUserId, _context);
             return Ok(commentDisplay);
         }
-
+        // Checks if a comment exists in the database using its ID.
         private bool CommentExists(string id)
         {
             return _context.Comment.Any(e => e.Id == id);

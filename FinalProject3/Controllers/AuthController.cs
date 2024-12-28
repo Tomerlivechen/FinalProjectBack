@@ -18,6 +18,7 @@ namespace FinalProject3.Controllers;
 public class AuthController(FP3Context context, SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, IJwtTokenService jwtTokenService) : Controller
 {
     private readonly FP3Context _context = context;
+    /// Registers a new user and signs them in automatically.
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] AppUserRegister register)
     {
@@ -44,7 +45,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
 
         return BadRequest(ModelState);
     }
-
+    /// Retrieves a list of all users for authorized requests.
     [HttpGet("GetUsers")]
     [Authorize]
     public async Task<ActionResult<IEnumerable<AppUserDisplay>>> GetUsers()
@@ -73,6 +74,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         await userManager.UpdateAsync(currentUser);
         return Ok(usersDisplay);
     }
+    /// Toggles a user's activation status by their ID. Only admins are allowed to perform this action.
 
     [HttpDelete("ToggleInactivationById/{userId}")]
     [Authorize]
@@ -121,6 +123,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         return Ok(userToDelete);
     }
 
+    /// Retrieves a list of users the specified user is following.
 
     [HttpGet("GetFollowing/{userId}")]
     [Authorize]
@@ -161,7 +164,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         return Ok(followingDsplay);
     }
 
-
+    /// Retrieves a user by their email address.
     [HttpGet("userByEmail/{userEmail}")]
     public async Task<ActionResult<AppUserDisplay>> GetUserByEmail(string userEmail)
     {
@@ -174,7 +177,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         return Ok(currentUserDisplay);
     }
 
-
+    /// Generates a password reset token for a user identified by their email.
     [HttpGet("ResetPassword/{userEmail}")]
     public async Task<ActionResult<string>> GetUserPassword(string userEmail)
     {
@@ -187,6 +190,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         return Ok(token);
     }
 
+    /// Resets a user's password using a token.
     [HttpPut("SetNewPassword")]
     public async Task<ActionResult<string>> SetNewPassword(ReNewPasswordDTO passwordDTO)
     {
@@ -207,7 +211,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
     }
 
 
-
+    /// Retrieves the social groups a user belongs to.
     [HttpGet("GroupsByUser/{userId}")]
     [Authorize]
     public async Task<ActionResult<IEnumerable<SocialGroupCard>>> GetGroups(string userId)
@@ -242,7 +246,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         return Ok(groupCards);
     }
 
-
+    /// Retrieves a user's details by their ID.
     [HttpGet("ById/{userId}")]
     [Authorize]
     public async Task<ActionResult<AppUserDisplay>> GetUser(string userId)
@@ -272,7 +276,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
             return NotFound("User Not Found");
         
     }
-
+    /// Retrieves the full details of a user, including following and posts.
     [HttpGet("GetFullUser/{userId}")]
     [Authorize]
     public async Task<ActionResult<AppUser>> GetFullUser(string userId)
@@ -290,7 +294,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         return NotFound("User Not Found");
 
     }
-
+    /// Retrieves the IDs of users the current user is following.
     [HttpGet("GetFollowingIds")]
     [Authorize]
     public async Task<ActionResult<IEnumerable<string>>> GetFollowingId( )
@@ -311,7 +315,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
 
     }
 
-
+    /// Authenticates and logs in a user.
     [HttpPost("login")]
     public async Task<IActionResult> LogIn([FromBody] AppUserLogin login)
     {
@@ -341,7 +345,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         }
         return Unauthorized();
     }
-
+    /// Validates the provided JWT token.
     [HttpGet("validateToken")]
     [Authorize]
     public IActionResult ValidateToken()
@@ -351,14 +355,14 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
 
 
 
-
-        [HttpGet("Logout")]
+    /// Logs out the current user and redirects to the homepage.
+    [HttpGet("Logout")]
     public async Task<IActionResult> LogOut()
     {
         await signInManager.SignOutAsync();
         return Redirect("/");
     }
-
+    /// Manages user details and updates if necessary.
     [HttpPut("manage")]
     [Authorize]
     public async Task<ActionResult<AppUserDisplay>> Manage([FromBody] AppUserEdit manageView)
@@ -464,7 +468,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         var returnEmptyUser = await currentUser.UsertoDisplay(_context, currentUser);
         return Ok(returnEmptyUser);
     }
-
+    /// Adds a user to the current user's following list.
     [HttpPut("follow")]
     [Authorize]
     public async Task<IActionResult> Follow([FromBody] AppUserIdRequest followId)
@@ -497,7 +501,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         }
         return Ok(user.FollowingId);
     }
-
+    /// Removes a user from the current user's following list.
     [HttpPut("unfollow")]
     [Authorize]
     public async Task<IActionResult> UnFollow([FromBody] AppUserIdRequest unfollowId)
@@ -527,7 +531,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         return Ok(user.FollowingId);
     }
 
-
+    /// Adds a user to the current user's blocked list.
     [HttpPut("block")]
     [Authorize]
     public async Task<IActionResult> Block([FromBody] AppUserIdRequest toBlock)
@@ -562,6 +566,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         }
         return Ok(user.BlockedId);
     }
+    /// Removes a user to the current user's blocked list.
     [HttpPut("unblock")]
     [Authorize]
     public async Task<IActionResult> UnBlock([FromBody] AppUserIdRequest unBlock)

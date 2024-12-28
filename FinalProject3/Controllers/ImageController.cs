@@ -16,7 +16,7 @@ namespace FinalProject3.Controllers
     {
 
         private readonly FP3Context _context = context;
-
+        /// Sends an image URL and associates it with the current user, storing it in the database.
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<AppImageDisplay>> SendImage(StringInput imgURL)
@@ -54,7 +54,7 @@ namespace FinalProject3.Controllers
 
 
 
-
+        /// Retrieves all images associated with a specific user by their user ID.
         [HttpGet("byId/{UserId}")]
         [Authorize]
         public async Task<ActionResult<List<AppImageDisplay>>> GetUserImages(string UserId)
@@ -75,7 +75,7 @@ namespace FinalProject3.Controllers
 
         }
 
-
+        /// Deletes a specific image by its ID, if the user is authorized to do so.
         [HttpDelete ("byId/{imageId}")]
         [Authorize]
         public async Task<ActionResult> DeleteImage(string imageId)
@@ -107,7 +107,7 @@ namespace FinalProject3.Controllers
 
             return Ok();
         }
-
+        /// Updates the name of a specific image by its ID.
         [HttpPut("byId/{imageId}")]
         [Authorize]
         public async Task<ActionResult> NameImage(string imageId, [FromBody] StringInput input)
@@ -141,6 +141,7 @@ namespace FinalProject3.Controllers
 
             return Ok(image);
         }
+        /// Toggles the privacy setting of an image by its ID. If the image is public, it becomes private, and vice versa.
 
         [HttpPut("togglePrivatebyId/{imageId}")]
         [Authorize]

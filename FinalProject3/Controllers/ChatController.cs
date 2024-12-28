@@ -19,7 +19,8 @@ namespace FinalProject3.Controllers
     {
         private readonly FP3Context _context = context;
 
-
+        /// Creates a new chat between two users. The method checks if the users are valid and if the chat already exists.
+        /// If valid, it adds the new chat to the database and associates it with both users.
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<string>> CreatNewChat ([FromBody] IdInput idInput)
@@ -59,6 +60,7 @@ namespace FinalProject3.Controllers
             return Ok(upChat.Id);
 
         }
+        /// Retrieves a chat by its ID, including all associated messages. The method checks if the chat exists in the database.
 
         [HttpGet("ByChatId/{ChatID}")]
         [Authorize]
@@ -71,6 +73,7 @@ namespace FinalProject3.Controllers
             }
             return Ok(chat.ToDisplay());
         }
+        /// Retrieves a list of users who are in chats that the authenticated user is not following.
 
         [HttpGet("notFollowingChats")]
         [Authorize]
@@ -114,7 +117,7 @@ namespace FinalProject3.Controllers
             return Ok(chatNotFollowed);
         }
 
-
+        /// Allows the authenticated user to edit a message if it was sent within the last 10 minutes. The method checks if the message exists, if the user is authorized to edit it, and if it is still editable.
         [HttpPut("EditMessage/{MessageId}")]
         [Authorize]
         public async Task<ActionResult> EditMessage(string MessageId,[FromBody] StringInput newMessage)
@@ -171,7 +174,7 @@ namespace FinalProject3.Controllers
             }
         }
 
-
+        /// Allows the authenticated user to delete a message if it was sent within the last 10 minutes. The method checks if the message exists, if the user is authorized to delete it, and if it is still deletable.
         [HttpDelete("DeleteMessage/{MessageId}")]
         [Authorize]
         public async Task<ActionResult> DeleteMessage(string MessageId)
@@ -233,6 +236,7 @@ namespace FinalProject3.Controllers
 
 
 
+        /// Sends a new message to a specified chat. The method checks if the user is valid, if the chat exists, and whether the message content is valid.
 
         [HttpPost("Message")]
         [Authorize]
