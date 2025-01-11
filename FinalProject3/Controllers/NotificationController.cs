@@ -60,7 +60,7 @@ namespace FinalProject3.Controllers
             Notification notification = await notificationNew.AddNotification(_context);
             AppUser? notified = null;
             Interaction? interaction = null;
-            interaction = await _context.Comment.FindAsync(notificationNew.ReferenceId);
+       //     interaction = await _context.Comment.FindAsync(notificationNew.ReferenceId);
             if (interaction is null)
             {
                 interaction = await _context.Post.FindAsync(notificationNew.ReferenceId);

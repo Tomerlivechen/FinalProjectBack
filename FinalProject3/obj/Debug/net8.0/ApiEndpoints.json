@@ -837,7 +837,7 @@
     "ContainingType": "FinalProject3.Controllers.NotificationController",
     "Method": "AgeOutNotifications",
     "RelativePath": "api/Notification",
-    "HttpMethod": "PATCH",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [],

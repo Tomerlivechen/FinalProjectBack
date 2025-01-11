@@ -157,7 +157,7 @@ namespace FinalProject3.Controllers
             parent.Comments.Add(newComment);
             if (parent.Author.Id == userId)
             {
-                flag = false;
+                flag = true;
             }
             if (!flag)
             {
@@ -175,7 +175,7 @@ namespace FinalProject3.Controllers
             }
 
                 try
-                {
+                  {
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateException ex)
