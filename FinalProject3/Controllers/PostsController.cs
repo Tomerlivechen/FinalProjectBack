@@ -115,7 +115,7 @@ namespace FinalProject3.Controllers
         // Retrieves a list of posts authored by a specific author, filtered for the current user.
         [HttpGet("ByAuthor/{AuthorId}")]
         [Authorize]
-        public async Task<ActionResult<List<PostDisplay>>> GetPostByAuthor(string AuthorId)
+        public async Task<ActionResult<List<PostDisplay>>> GetPostByAuthor(string AuthorId, [FromBody] int page=1)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userId is null)
@@ -127,6 +127,7 @@ namespace FinalProject3.Controllers
             {
                 return Unauthorized();
             }
+            int PageSize = page*25;
             var posts = await _context.Post.Include(p => p.Comments).Include(p => p.Votes).ThenInclude(v => v.Voter).Include(p => p.Author).Include(p => p.Group).Where(p => p.Author != null && p.Author.Id == AuthorId).ToListAsync();
             var postsDisplay = new List<PostDisplay>();
             foreach (var post in posts)

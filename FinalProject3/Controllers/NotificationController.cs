@@ -21,11 +21,12 @@ namespace FinalProject3.Controllers
         [Authorize]
         public async Task<ActionResult<List<NotificationDisplay>>> GetNotifications()
         {
+            await AgeOutNotifications();
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var notifications = await _context.Notification.Where(n => n.Notified != null && n.Notified.Id == userId && !n.Hidden).Select(n => n.ToDisplay()).ToListAsync();
             return (notifications);
         }
-        /// Aged out notifications , age out changes thair status acording to the AgeOut function 5 days to seen 30 days to hide.
+        /// Age out notifications , age out changes thair status acording to the AgeOut function 5 days to seen 30 days to hide.
 
         [HttpPut]
         [Authorize]
