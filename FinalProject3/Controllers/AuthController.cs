@@ -348,7 +348,7 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
     /// Validates the provided JWT token.
     [HttpGet("validateToken")]
     [Authorize]
-    public IActionResult ValidateToken()
+    public async Task<IActionResult> ValidateToken()
     {
             return Ok();
     }
