@@ -346,8 +346,9 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         return Unauthorized();
     }
     /// Validates the provided JWT token.
-    [HttpGet("validateToken")]
-    [Authorize]
+     /// token valudation is giving issus with fire fox so it was removed
+   [HttpGet("validateToken")]
+//   [Authorize]
     public async Task<IActionResult> ValidateToken()
     {
             return Ok();
@@ -356,7 +357,8 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
 
 
     /// Logs out the current user and redirects to the homepage.
-    [HttpGet("Logout")]
+   
+  [HttpGet("Logout")]
     public async Task<IActionResult> LogOut()
     {
         await signInManager.SignOutAsync();
