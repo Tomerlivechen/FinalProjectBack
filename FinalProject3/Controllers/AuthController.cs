@@ -346,9 +346,8 @@ public class AuthController(FP3Context context, SignInManager<AppUser> signInMan
         return Unauthorized();
     }
     /// Validates the provided JWT token.
-     /// token valudation is giving issus with fire fox so it was removed
    [HttpGet("validateToken")]
-//   [Authorize]
+   [Authorize]
     public async Task<IActionResult> ValidateToken()
     {
             return Ok();
