@@ -326,16 +326,16 @@ The platform uses JWT-based authentication to ensure secure access to resources.
 - A **User** can be blocked by multiple other **Users**.  
 
 ### Chats and Users  
-- A **Chat** includes multiple **Users**.  
+- A **Chat** includes two **Users**.  
 - A **User** can participate in multiple **Chats**.  
 
 ### Posts and Comments  
 - A **User** can create multiple **Posts**.  
 - A **Post** can have one **Author**.  
-- A **Post** can belong to one **Social Group**.  
+- A **Post** can belong to at most one **Social Group**.  
 - A **Post** can have multiple **Comments**.  
 - A **Comment** can have one **Author**.  
-- A **Comment** can have multiple **Replies**.  
+- A **Comment** can have multiple **Comments**.  
 
 ---
 
