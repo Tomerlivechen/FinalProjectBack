@@ -341,7 +341,7 @@ The platform uses JWT-based authentication to ensure secure access to resources.
 
 ## License  
 This project is licensed under the [MIT License](LICENSE).  
-This project is distributed for educational purposes as part of a course. It is not intended for production use.  
+This project was created for educational purposes as part of a course. It is not intended for production use yet.  
 
 ---
 
